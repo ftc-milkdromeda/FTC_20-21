@@ -7,42 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Added New folders and files">
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/DriveOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Moter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Procedure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Odometry/Odometry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Odometry/OdometryState.java" afterDir="false" />
-    </list>
-    <list id="8497a905-d7b6-456b-87de-84fd174e9d5b" name="GarbageFiles" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/RobotFunctions_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/RobotFunctions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/Test.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/libs/RobotFunctions/RobotFunctions.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-api-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-engine-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-jupiter-params-5.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-commons-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-platform-engine-1.4.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/opentest4j-1.1.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/PrecisionMecanumWheels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/RoughMecanumWheels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Odometry/RobotState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FTC_20-21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FTC_20-21.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
-    </list>
-    <list id="31762b13-6f7d-45c9-b200-058fb824beda" name="Java Files" comment="">
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Units.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Odometry/Odometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Odometry/Odometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Odometry/OdometryState.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Odometry/OdometryState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +25,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -144,8 +121,6 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="" />
-      <changelist id="31762b13-6f7d-45c9-b200-058fb824beda" name="Java Files" comment="" />
-      <changelist id="8497a905-d7b6-456b-87de-84fd174e9d5b" name="GarbageFiles" comment="" />
       <created>1601413090396</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -179,7 +154,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601782453373</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Java Files">
+      <created>1601865861075</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601865861075</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Committing project files">
+      <created>1601865902627</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601865902627</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -188,7 +177,9 @@
     <MESSAGE value="Added new ignore file" />
     <MESSAGE value="Added new project files" />
     <MESSAGE value="Added New folders and files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added New folders and files" />
+    <MESSAGE value="Java Files" />
+    <MESSAGE value="Committing project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Committing project files" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1601568922279">
@@ -207,10 +198,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601563529647" />
-    <state x="627" y="118" key="CommitChangelistDialog2" timestamp="1601865859905">
+    <state x="627" y="118" key="CommitChangelistDialog2" timestamp="1601868451141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="627" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601865859905" />
+    <state x="627" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601868451141" />
     <state x="714" y="238" key="DetectedRootsChooserDialog" timestamp="1601564373133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -267,14 +258,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="392" key="VCS.EditChangelistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601782471420" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1601569112251">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1601865931215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601569112251" />
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1601832334410">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601865931215" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1601866116619">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601832334410" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601866116619" />
     <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601569253874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -283,6 +274,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="731" y="240" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601565794743" />
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1" timestamp="1601866268097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1601866268097" />
     <state x="342" y="146" key="new project wizard" timestamp="1601565937543">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

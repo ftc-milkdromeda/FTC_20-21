@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FTC_20-21.iml" filepath="$PROJECT_DIR$/FTC_20-21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" filepath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RobotFunctions:jar">
+    <output-path>$PROJECT_DIR$/Ultimate-Goal/libs/RobotFunctions</output-path>
+    <root id="archive" name="RobotFunctions.jar">
+      <element id="module-output" name="RobotFunctions" />
+    </root>
+  </artifact>
+</component>

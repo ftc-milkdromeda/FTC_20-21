@@ -8,8 +8,10 @@ import java.util.ArrayList;
  * @author Tyler Wang
  */
 public abstract class MecanumWheels {
-    protected MecanumWheels(Drive drive) {
+    protected MecanumWheels(Drive drive, double width, double height, Units units) {
         this.drive = drive;
+        this.width = width * units.getValue();
+        this.height = height * units.getValue();
     }
 
     void deleteObject() {
@@ -17,8 +19,17 @@ public abstract class MecanumWheels {
         MecanumWheels.isInstance = false;
     }
     protected boolean checkActivity() { return this.active; }
+    protected double pivotPointCalculation(double x) {
+        double a = 2.5;
+        //funtion: a * x^-1 - a
+        if(x == 0)
+            return -1;
+        return a / x -a * Math.signum(x);
+    }
 
     protected  boolean active = true;
     protected static boolean isInstance = false;
     protected Drive drive;
+    protected double width;
+    protected  double height;
 }

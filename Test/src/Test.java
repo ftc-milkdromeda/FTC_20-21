@@ -9,8 +9,8 @@ public class Test {
         Drive print = new Print();
         RoughMecanumWheels wheels = RoughMecanumWheels.instance(print, 18, 18, Units.IN);
 
-        Procedure operation = new Procedure(Math.PI * .25, 1.0, 0);
-        wheels.setTrojectory(operation);
+        Procedure operation = new Procedure(Math.PI * .25, 1.0, 0.5);
+        wheels.addTrojectory(operation);
         wheels.drive();
     }
 }

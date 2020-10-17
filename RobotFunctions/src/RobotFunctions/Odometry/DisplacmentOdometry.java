@@ -1,12 +1,15 @@
 package RobotFunctions.Odometry;
 
 public class DisplacmentOdometry extends Odometry {
-    private DisplacmentOdometry() { this.point = new RobotState(0, 0, 0); }
+    private DisplacmentOdometry(Config config) {
+        super(config);
+        this.point = new RobotState(0, 0, 0);
+    }
 
-    public static DisplacmentOdometry instance() {
+    public static DisplacmentOdometry instance(Config config) {
         if (!Odometry.getReady())
             return null;
-        return new DisplacmentOdometry();
+        return new DisplacmentOdometry(config);
     }
 
     public RobotState getNetDisplacment() {
@@ -38,6 +41,9 @@ public class DisplacmentOdometry extends Odometry {
                 super.obj_initial.getRotation() + super.obj_travel.getRotation());
     }
 
+    /**
+     * @brief point used to set to calculate displacement from a certain point.
+     */
     private RobotState point;
 
 }

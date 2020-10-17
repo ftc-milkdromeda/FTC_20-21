@@ -14,5 +14,3 @@ public class RobotState {
     private double[] componentVector;
     private double rotation;
 }
-
-//TODO add getters and a constructor

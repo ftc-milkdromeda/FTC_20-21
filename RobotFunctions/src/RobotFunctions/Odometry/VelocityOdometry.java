@@ -1,16 +1,18 @@
 package RobotFunctions.Odometry;
 
 public class VelocityOdometry extends Odometry {
-    private VelocityOdometry() {
+    private VelocityOdometry(Config config) {
+        super(config);
+
         this.initTime = System.currentTimeMillis();
         this.pointTime = System.currentTimeMillis();
         this.point = new RobotState(0, 0, 0);
     }
 
-    public static VelocityOdometry instance() {
+    public static VelocityOdometry instance(Config config) {
         if (!Odometry.getReady())
             return null;
-        return new VelocityOdometry();
+        return new VelocityOdometry(config);
     }
 
     public RobotState getNetVelocity() {

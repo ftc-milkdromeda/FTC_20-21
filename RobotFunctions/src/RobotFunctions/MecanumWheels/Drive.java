@@ -9,7 +9,6 @@ import RobotFunctions.Units;
  */
 public abstract class Drive{
     public Drive() {
-        this.odometry = new Odometry();
         this.power = new double[4];
     }
 
@@ -23,6 +22,5 @@ public abstract class Drive{
     public abstract void setMoter(Moter index, double power);
     public abstract void setMoters(double[] power);
 
-    protected Odometry odometry;
     protected double[] power;
 }

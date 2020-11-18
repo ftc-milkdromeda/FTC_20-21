@@ -19,12 +19,12 @@ public class RoughMecanumWheels extends MecanumWheels{
             return -1;
         if(operation.size() == 0)
             return 1;
-        super.drive.setMoters(super.operation.get(0).getMoters());
+        super.drive.setMotors(super.operation.get(0).getMotors());
         return 0;
     }
 
     @Override
-    public int addTrojectory(Procedure operation) {
+    public int addTrajectory(Procedure operation) {
         if(!super.active)
             return -1;
         if(!operation.isVectorMode())

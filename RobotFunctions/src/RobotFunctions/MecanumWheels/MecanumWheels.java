@@ -8,6 +8,13 @@ import java.util.ArrayList;
  * @author Tyler Wang
  */
 public abstract class MecanumWheels {
+    /**
+     * @brief Constructs new MecanumWheel objectfs
+     * @param drive instance of a subclass of Drive class.
+     * @param width The length between the two front wheels on the drive train.
+     * @param height The length between the two side wheels on the drive train.
+     * @param units Units used to make the measurements.
+     */
     protected MecanumWheels(Drive drive, double width, double height, Units units) {
         this.drive = drive;
         this.width = width * units.getValue();
@@ -15,6 +22,11 @@ public abstract class MecanumWheels {
         this.operation = new ArrayList<DriveOperation>();
     }
 
+    /**
+     * @brief Calculates the motor power configuration for successful completion of the procedure provided.
+     * @param operation The procedure for which function will calculate a drive command for.
+     * @return DriveOperation for which class can use.
+     */
     protected DriveOperation calculatePath(Procedure operation) {
         double wheels[] = new double[4];
 
@@ -23,10 +35,10 @@ public abstract class MecanumWheels {
         double F_0 = Math.sin(operation.getAngle() + Math.PI / 4);
         double F_1 = Math.sin(operation.getAngle() - Math.PI / 4);
 
-        wheels[Moter.UPPER_LEFT.getValue()] = F_0;
-        wheels[Moter.LOWER_RIGHT.getValue()] = F_0;
-        wheels[Moter.UPPER_RIGHT.getValue()] = F_1;
-        wheels[Moter.LOWER_LEFT.getValue()] = F_1;
+        wheels[Motor.UPPER_LEFT.getValue()] = F_0;
+        wheels[Motor.LOWER_RIGHT.getValue()] = F_0;
+        wheels[Motor.UPPER_RIGHT.getValue()] = F_1;
+        wheels[Motor.LOWER_LEFT.getValue()] = F_1;
 
         //calculate pivot
         Pivot: //skips if pivot distance is less than infinity
@@ -50,10 +62,10 @@ public abstract class MecanumWheels {
             double pivot_y = pivotDistance * Math.sin((Math.PI / 2) + operation.getAngle());
 
             //operation: r = sqrt[ (W_x - C_x)^2 + (W_y - C_y)^2 ]
-            wheels[Moter.UPPER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
-            wheels[Moter.UPPER_LEFT.getValue()]*= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
-            wheels[Moter.LOWER_LEFT.getValue()] *= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
-            wheels[Moter.LOWER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
+            wheels[Motor.UPPER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
+            wheels[Motor.UPPER_LEFT.getValue()]*= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
+            wheels[Motor.LOWER_LEFT.getValue()] *= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
+            wheels[Motor.LOWER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
         }
         //normalizing range between -1.0 - 1.0
         double maxValue = Math.abs(wheels[0]);
@@ -67,12 +79,25 @@ public abstract class MecanumWheels {
         return new DriveOperation(wheels);
     }
 
+    /**
+     * @brief Deletes the current object so that a new instance can be created.
+     */
     public void deleteObject() {
         active = false;
         MecanumWheels.isInstance = false;
     }
 
+    /**
+     * @brief Checks whether the current object is active.
+     * @return Returns true if current object is still active; returns false if current object isn't active.
+     */
     protected boolean checkActivity() { return this.active; }
+
+    /**
+     * @brief Calculates distance of the pivot point for a given pivot magnitude.
+     * @param x The magnitude of pivot that needs to be converted to the distance of pivot point.
+     * @return Distance from robot centroid to pivot measured in multiples of the robot radius.
+     */
     protected double pivotPointCalculation(double x) {
         double a = 2.5;
         //funtion: a * x^-1 - a * sgn(x)
@@ -81,17 +106,35 @@ public abstract class MecanumWheels {
         return a / x -a * Math.signum(x);
     }
 
+    /**
+     * @brief runs the command for the class to run the operation set by the addTrojectory method.
+     * @return returns -1 if class isn't active; returns 0 on success.
+     */
     public abstract int drive();
-    public abstract int addTrojectory(Procedure operation);
 
+    /**
+     * @brief Adds an operation to for the drive train to follow.
+     * @param operation An instance of the Procedure class.
+     * @return Returns 0 if success; returns -1 if class isn't active; returns 1 if procedure is invalid.
+     */
+    public abstract int addTrajectory(Procedure operation);
+
+    /**
+     * @brief Turns off all of the motors on the drive train.
+     * @return returns -1 if class isn't active; returns 0 on success.
+     */
     public int stop() {
         if(!this.active)
             return -1;
-        double power[] = { 0, 0, 0, 0 };
-        this.drive.setMoters(power);
+        this.drive.stop();
 
         return 0;
     }
+
+    /**
+     * @brief Resets the operation that the class will follow.
+     * @return returns -1 if class isn't active; returns 0 on success.
+     */
     public int resetOperation() {
         if(!this.active)
             return -1;

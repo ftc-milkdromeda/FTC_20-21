@@ -1,3 +1,4 @@
 [submodule "Ultimate-Goal"]
 	path = Ultimate-Goal
 	url = https://github.com/ftc-milkdromeda/Ultimate-Goal.git
+	branch = dev

@@ -7,8 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/Controllers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/GamePadID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/KeyMappings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/EstablishedOpMode/Auto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/EstablishedOpMode/TeleOp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/MecanumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/MecanumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/MoterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/MoterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/ShooterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/ShooterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/WheelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/WheelsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +65,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.19425288" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -315,10 +324,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="627" y="224" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1601566069501" />
-    <state x="440" y="97" key="SettingsEditor" timestamp="1605485799358">
+    <state x="440" y="97" key="SettingsEditor" timestamp="1605971525127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605485799358" />
+    <state x="440" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605971525127" />
     <state x="807" y="441" key="VCS.ChangelistChooser" timestamp="1601569981637">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -331,10 +340,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605792310505" />
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605791603415">
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605916110183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605791603415" />
+    <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605916110183" />
     <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601569253874">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -376,6 +385,15 @@
           <url>file://$PROJECT_DIR$/out/production/RobotFunctions/RobotFunctions/MecanumWheels/MecanumWheels.class</url>
           <line>27</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/Controllers.java</url>
+          <line>23</line>
+          <properties class="RobotFunctions.GamePad.Controllers">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="temporary" value="true" />
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

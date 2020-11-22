@@ -7,17 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/Controllers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/GamePadID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/KeyMappings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/EstablishedOpMode/Auto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/EstablishedOpMode/TeleOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/CourseCorrection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/MecanumTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/MecanumTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/MoterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/MoterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/ShooterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/ShooterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/WheelsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/WheelsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +205,35 @@
       <option name="project" value="LOCAL" />
       <updated>1605722389678</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Reorganized some things around in the project.">
+      <created>1605973366458</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1605973366458</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added a way to index gamepads.">
+      <created>1605973409123</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605973409123</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added driver to convert gamepad from FTC to inputs for RobotFunctions">
+      <created>1605973442246</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605973442246</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added new files for potential new functions">
+      <created>1605973468002</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1605973468002</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,7 +262,11 @@
     <MESSAGE value="Debuged RoughMecanumWheels; Began PrecisionMecanumWheels; Finished Odometry class interface; need to add Odometry logic for calculating displacement." />
     <MESSAGE value="RobotFunctions v0.1" />
     <MESSAGE value="Made some documentation changes; Changed return variable in DriveOperation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made some documentation changes; Changed return variable in DriveOperation." />
+    <MESSAGE value="Reorganized some things around in the project." />
+    <MESSAGE value="Added a way to index gamepads." />
+    <MESSAGE value="Added driver to convert gamepad from FTC to inputs for RobotFunctions" />
+    <MESSAGE value="Added new files for potential new functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new files for potential new functions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
@@ -272,14 +297,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="389" width="424" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1602084122161" />
-    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602107093175">
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605994663277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602107093175" />
-    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1605722387814">
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
+    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606017275718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1605722387814" />
+    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606017275718" />
     <state x="714" y="238" key="DetectedRootsChooserDialog" timestamp="1601564373133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -336,10 +361,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="392" key="VCS.EditChangelistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601782471420" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1605792310505">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1605973486009">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605792310505" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605973486009" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605916110183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -385,15 +410,6 @@
           <url>file://$PROJECT_DIR$/out/production/RobotFunctions/RobotFunctions/MecanumWheels/MecanumWheels.class</url>
           <line>27</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/Controllers.java</url>
-          <line>23</line>
-          <properties class="RobotFunctions.GamePad.Controllers">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="temporary" value="true" />
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

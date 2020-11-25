@@ -9,7 +9,7 @@ public enum Error {
     INCORRECT_PROCEDURE_MODE(001),
     PROCEDURE_MODE_NOT_INIT(001);
 
-    public int errorCode;
+    private int errorCode;
     private Error(int errorCode) {
         this.errorCode = errorCode;
     }

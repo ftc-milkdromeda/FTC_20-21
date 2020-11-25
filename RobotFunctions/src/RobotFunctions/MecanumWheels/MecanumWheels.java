@@ -41,6 +41,7 @@ public abstract class MecanumWheels {
         wheels[Motor.LOWER_LEFT.getValue()] = F_1;
 
         //calculate pivot
+        //TODO fix pivot calcuation.
         Pivot: //skips if pivot distance is less than infinity
         {
             double wheel_x = this.width / 2;

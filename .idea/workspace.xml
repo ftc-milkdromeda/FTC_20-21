@@ -6,11 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/CourseCorrection.java" afterDir="false" />
+    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Added todo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +232,21 @@
       <option name="project" value="LOCAL" />
       <updated>1605973468002</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added new CourseCorrection class">
+      <created>1606017262757</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1606017262757</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Changes to project files.">
+      <created>1606017286937</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1606017286937</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,7 +279,9 @@
     <MESSAGE value="Added a way to index gamepads." />
     <MESSAGE value="Added driver to convert gamepad from FTC to inputs for RobotFunctions" />
     <MESSAGE value="Added new files for potential new functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new files for potential new functions" />
+    <MESSAGE value="Added new CourseCorrection class" />
+    <MESSAGE value="Changes to project files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to project files." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
@@ -301,10 +316,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
-    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606017275718">
+    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606017286477">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606017275718" />
+    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606017286477" />
     <state x="714" y="238" key="DetectedRootsChooserDialog" timestamp="1601564373133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -403,7 +418,7 @@
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/out/production/RobotFunctions/RobotFunctions/MecanumWheels/MecanumWheels.class</url>
-          <line>64</line>
+          <line>68</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint type="java-line">

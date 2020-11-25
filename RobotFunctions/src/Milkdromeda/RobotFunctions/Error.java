@@ -1,11 +1,6 @@
 package Milkdromeda.RobotFunctions;
 
 public enum Error {
-    CLASS_NOT_ACTIVE(-1),
-    DIVISION_BY_ZERO(-2),
-    ARGUMENTS_OUT_OF_BOUND(-3),
-    INVALID_STATES(-4),
-
     //errors for MecanumWheels.MecanumWheels
     MW_PROCESS_ALREADY_RUNNING(001),
     MW_NO_PROCESS_RUNNING(002),
@@ -17,7 +12,12 @@ public enum Error {
     O_THREAD_NOT_STARTED(103),
     O_THREAD_ALREADY_STARTED(104),
 
+    CLASS_NOT_ACTIVE(-1),
+    DIVISION_BY_ZERO(-2),
+    ARGUMENTS_OUT_OF_BOUND(-3),
+    INVALID_STATES(-4),
     NO_ERROR(0);
+
     private int errorCode;
     private Error(int errorCode) {
         this.errorCode = errorCode;

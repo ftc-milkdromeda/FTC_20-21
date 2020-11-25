@@ -1,4 +1,4 @@
-package Milkdromeda.RobotFunctions;
+package RobotFunctions;
 
 public enum Units_length {
     IN(0.0254), MM(0.001), CM(0.01), M(1), FT(0.3048); //Value corresponds with conversion factor to meters

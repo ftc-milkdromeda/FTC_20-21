@@ -1,3 +1,5 @@
+package RobotFunctions;
+
 public enum Error {
     CLASS_NOT_ACTIVE(-1),
     NO_ERROR(0),

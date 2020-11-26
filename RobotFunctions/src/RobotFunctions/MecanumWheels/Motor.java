@@ -5,4 +5,19 @@ public enum Motor {
     private int index;
     private Motor(int index) { this.index = index; }
     public int getValue() { return this.index; }
+
+    public static Motor cast(int value) {
+        switch (value) {
+            case 0:
+                return UPPER_LEFT;
+            case 1:
+                return LOWER_LEFT;
+            case 2:
+                return UPPER_RIGHT;
+            case 3:
+                return LOWER_RIGHT;
+            default:
+                return null;
+        }
+    }
 }

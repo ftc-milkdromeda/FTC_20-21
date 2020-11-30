@@ -6,10 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Added todo">
+    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Changed name from Units to Units">
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/BoundType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Error.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Procedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Procedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/MecanumDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/MecanumDrive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,15 +25,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,13 +53,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.19425288" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -96,6 +102,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Java Scratch.Scratch" />
       </list>
@@ -246,7 +254,84 @@
       <option name="project" value="LOCAL" />
       <updated>1606017286937</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added enum for easier error management.">
+      <created>1606338476260</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606338476260</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Deleted files omitted in new version">
+      <created>1606340244896</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1606340244896</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Changed error file.">
+      <created>1606340593815</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1606340593815</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Revert &quot;Deleted files omitted in new version&quot;; reverts only for dev branch&#10;&#10;This reverts commit 712dd7e5">
+      <created>1606340695726</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1606340695726</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Changed access parameter on errorCode in Error.">
+      <created>1606343223554</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1606343223554</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Moved error enum.">
+      <created>1606344010673</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1606344010673</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Changed name from Units to Units_length.">
+      <created>1606344041942</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1606344041942</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added new set of units.">
+      <created>1606344052445</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1606344052445</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update motor enum to be able to cast int to enum.">
+      <created>1606368066253</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1606368066253</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Added class to manage MecanumWheels objects.">
+      <created>1606696739546</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1606696739546</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Deleted DriveOperation.">
+      <created>1606696766496</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1606696766496</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,11 +348,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created Intilij Project" />
-    <MESSAGE value="Added new Android Studio package" />
-    <MESSAGE value="Added new ignore file" />
-    <MESSAGE value="Added new project files" />
-    <MESSAGE value="Added New folders and files" />
     <MESSAGE value="Java Files" />
     <MESSAGE value="Committing project files" />
     <MESSAGE value="Made project structure changes" />
@@ -281,13 +361,25 @@
     <MESSAGE value="Added new files for potential new functions" />
     <MESSAGE value="Added new CourseCorrection class" />
     <MESSAGE value="Changes to project files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to project files." />
+    <MESSAGE value="Added enum for easier error management." />
+    <MESSAGE value="Deleted files omitted in new version" />
+    <MESSAGE value="Changed error file." />
+    <MESSAGE value="workspace changes" />
+    <MESSAGE value="Revert &quot;Deleted files omitted in new version&quot;; reverts only for dev branch&#10;&#10;This reverts commit 712dd7e5" />
+    <MESSAGE value="Changed access parameter on errorCode in Error." />
+    <MESSAGE value="Moved error enum." />
+    <MESSAGE value="Changed name from Units to Units_length." />
+    <MESSAGE value="Added new set of units." />
+    <MESSAGE value="Update motor enum to be able to cast int to enum." />
+    <MESSAGE value="Added class to manage MecanumWheels objects." />
+    <MESSAGE value="Deleted DriveOperation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted DriveOperation." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
+    <state x="552" y="181" key="#Project_Structure" timestamp="1606338090546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1604952585037" />
+    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1606338090546" />
     <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602135584837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -296,10 +388,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="599" y="213" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601570417083" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1602392797285">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1606348921103">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602392797285" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606348921103" />
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601563529647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -316,10 +408,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
-    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606017286477">
+    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606719908485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606017286477" />
+    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606719908485" />
     <state x="714" y="238" key="DetectedRootsChooserDialog" timestamp="1601564373133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -364,6 +456,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="627" y="224" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1601566069501" />
+    <state x="734" y="231" key="RollbackChangesDialog" timestamp="1606340163496">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="734" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606340163496" />
     <state x="440" y="97" key="SettingsEditor" timestamp="1605971525127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -404,6 +500,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1601866268097" />
+    <state x="741" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1606340575107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="741" y="233" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1606340575107" />
     <state x="342" y="146" key="new project wizard" timestamp="1601565937543">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -416,11 +516,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/out/production/RobotFunctions/RobotFunctions/MecanumWheels/MecanumWheels.class</url>
-          <line>68</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/out/production/RobotFunctions/RobotFunctions/MecanumWheels/MecanumWheels.class</url>
           <line>27</line>

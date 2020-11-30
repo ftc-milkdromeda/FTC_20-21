@@ -1,154 +1,172 @@
-package Milkdromeda.RobotFunctions.MecanumWheels;
+package RobotFunctions.MecanumWheels;
 
-import Milkdromeda.Drivers.DriveTrain;
-import Milkdromeda.RobotFunctions.Units_length;
-import java.util.ArrayList;
+import RobotFunctions.Units_length;
+import RobotFunctions.Units_time;
+import RobotFunctions.Error;
 
-/**
- * @brief Controls mecanum wheels operations. Class is a state machine.
- * @author Tyler Wang
- */
-public abstract class MecanumWheels {
-    /**
-     * @brief Constructs new MecanumWheel objectfs
-     * @param driveTrain instance of a subclass of Drive class.
-     * @param width The length between the two front wheels on the drive train.
-     * @param height The length between the two side wheels on the drive train.
-     * @param units Units used to make the measurements.
-     */
-    protected MecanumWheels(DriveTrain driveTrain, double width, double height, Units_length units) {
-        this.driveTrain = driveTrain;
-        this.width = width * units.getValue();
-        this.height = height * units.getValue();
-        this.operation = new ArrayList<DriveOperation>();
+public class MecanumWheels {
+    MecanumWheels(Drive driveConfig) {
+        this.bound = BoundType.NONE;
+        this.boundValue = -1;
+        this.normalized = false;
+        this.settings = new MotorSetting();
+        this.isPathUpdated = false;
+        this.instanceRunning = false;
+        this.driveConfig = driveConfig;
+        this.startTime = 0;
+
+        this.setError(Error.NO_ERROR);
     }
 
-    /**
-     * @brief Calculates the motor power configuration for successful completion of the procedure provided.
-     * @param operation The procedure for which function will calculate a drive command for.
-     * @return DriveOperation for which class can use.
-     */
-    protected DriveOperation calculatePath(Procedure operation) {
-        double wheels[] = new double[4];
+    MecanumWheels(MecanumWheels object) {
+        this.bound = object.bound;
+        this.boundValue = object.boundValue;
+        this.normalized = object.normalized;
+        this.settings = new MotorSetting();
+        this.isPathUpdated = false;
+        this.driveConfig = object.driveConfig;
+        this.instanceRunning = false;
+        this.startTime = 0;
 
-        //calculating strafe
-        //operation: sin(R + PI/4)
-        double F_0 = Math.sin(operation.getAngle() + Math.PI / 4);
-        double F_1 = Math.sin(operation.getAngle() - Math.PI / 4);
+        this.setError(Error.NO_ERROR);
+   }
 
-        wheels[Motor.UPPER_LEFT.getValue()] = F_0;
-        wheels[Motor.LOWER_RIGHT.getValue()] = F_0;
-        wheels[Motor.UPPER_RIGHT.getValue()] = F_1;
-        wheels[Motor.LOWER_LEFT.getValue()] = F_1;
+   public void copyMotorSetting(MecanumWheels object) {
+        this.setError(Error.NO_ERROR);
+        this.settings = new MotorSetting(this.settings);
+        this.isPathUpdated = true;
 
-        //calculate pivot
-        //TODO fix pivot calcuation.
-        Pivot: //skips if pivot distance is less than infinity
-        {
-            double wheel_x = this.width / 2;
-            double wheel_y = this.height / 2;
-            double pivotDistance = this.pivotPointCalculation(operation.getPivot()) * Math.sqrt(Math.pow(wheel_x, 2) + Math.pow(wheel_y, 2));
-            if(pivotDistance == this.INFINITY) //testing if pivot is less than 0
-                break Pivot;
-            else if(pivotDistance == 0) {
-                wheels[0] = -1 * Math.signum(operation.getPivot());
-                wheels[1] = -1 * Math.signum(operation.getPivot());
-                wheels[2] = Math.signum(operation.getPivot());
-                wheels[3] = Math.signum(operation.getPivot());
-                break Pivot;
-            }
+        this.setError(Error.NO_ERROR);
+   }
 
-            //operation: P_x = P_d * cos(R + pi/2)
-            double pivot_x = pivotDistance * Math.cos((Math.PI / 2) + operation.getAngle());
-            //operation: P_y = P_d * sin(R + pi/2)
-            double pivot_y = pivotDistance * Math.sin((Math.PI / 2) + operation.getAngle());
+    //todo fill in add Trajectory
+    public void addTrajectory(Procedure procedure) {}
+    public void setNormalized(boolean normalized) {
+        if(this.normalized == normalized)
+            return;
+        this.normalized = normalized;
+        this.isPathUpdated = false;
 
-            //operation: r = sqrt[ (W_x - C_x)^2 + (W_y - C_y)^2 ]
-            wheels[Motor.UPPER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
-            wheels[Motor.UPPER_LEFT.getValue()]*= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
-            wheels[Motor.LOWER_LEFT.getValue()] *= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
-            wheels[Motor.LOWER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
+        this.setError(Error.NO_ERROR);
+    }
+    public void setDistanceBounds(double distance, Units_length units) {
+        this.bound = BoundType.DISTANCE;
+        this.boundValue = distance * units.getValue();
+
+        this.setError(Error.NO_ERROR);
+    }
+    public void setTimeBounds(double time, Units_time units) {
+        this.bound = BoundType.TIME;
+        this.boundValue = time * units.getValue();
+
+        this.setError(Error.NO_ERROR);
+    }
+    public void deleteTrajectory() {
+        this.settings = new MotorSetting();
+
+        this.setError(Error.NO_ERROR);
+    }
+
+    public BoundType getBoundsType() {
+        this.setError(Error.NO_ERROR);
+
+        return this.bound;
+    }
+    public boolean getNormalized() {
+        this.setError(Error.NO_ERROR);
+
+        return this.normalized;
+    }
+
+    //todo fill in getRunTime
+    public double getRunTime(Units_time units) {
+        this.setError(Error.NO_ERROR);
+    }
+
+    //todo fill in getRunDistance.
+    public double getRunDistance(Units_length units) {
+        this.setError(Error.NO_ERROR);
+    }
+
+    void drive() {
+        if(MecanumWheels.running) {
+            this.setError(Error.PROCESS_ALREADY_RUNNING);
+            return;
         }
-        //normalizing range between -1.0 - 1.0
-        double maxValue = Math.abs(wheels[0]);
-        for(int a = 1; a < 4; a++)
-            maxValue = Math.abs(maxValue) < Math.abs(wheels[a]) ? Math.abs(wheels[a]) : maxValue;
 
-        for(int a = 0; a < 4; a++)
-            //operation: W_m = (W_m / W_max) * M_net
-            wheels[a] *= operation.getMagnitude() / maxValue;
+        MecanumWheels.running = true;
+        this.instanceRunning = true;
 
-        return new DriveOperation(wheels);
+        this.startTime = System.currentTimeMillis();
+        this.driveConfig.setMotor(this.settings.getMotor());
+
+        this.setError(Error.NO_ERROR);
     }
+    void updateDrive() {
+        if(!this.instanceRunning)
+            this.setError(Error.NO_PROCESS_RUNNING);
 
-    /**
-     * @brief Deletes the current object so that a new instance can be created.
-     */
-    public void deleteObject() {
-        active = false;
-        MecanumWheels.isInstance = false;
+        this.driveConfig.setMotor(this.settings.getMotor());
+
+        this.setError(Error.NO_ERROR);
     }
-
-    /**
-     * @brief Checks whether the current object is active.
-     * @return Returns true if current object is still active; returns false if current object isn't active.
-     */
-    protected boolean checkActivity() { return this.active; }
-
-    /**
-     * @brief Calculates distance of the pivot point for a given pivot magnitude.
-     * @param x The magnitude of pivot that needs to be converted to the distance of pivot point.
-     * @return Distance from robot centroid to pivot measured in multiples of the robot radius.
-     */
-    protected double pivotPointCalculation(double x) {
-        double a = 2.5;
-        //funtion: a * x^-1 - a * sgn(x)
-        if(x == 0)
-            return this.INFINITY;
-        return a / x -a * Math.signum(x);
-    }
-
-    /**
-     * @brief runs the command for the class to run the operation set by the addTrojectory method.
-     * @return returns -1 if class isn't active; returns 0 on success.
-     */
-    public abstract int drive();
-
-    /**
-     * @brief Adds an operation to for the drive train to follow.
-     * @param operation An instance of the Procedure class.
-     * @return Returns 0 if success; returns -1 if class isn't active; returns 1 if procedure is invalid.
-     */
-    public abstract int addTrajectory(Procedure operation);
-
-    /**
-     * @brief Turns off all of the motors on the drive train.
-     * @return returns -1 if class isn't active; returns 0 on success.
-     */
-    public int stop() {
-        if(!this.active)
+    long stop() {
+        if(!this.instanceRunning) {
+            this.setError(Error.NO_PROCESS_RUNNING);
             return -1;
-        this.driveTrain.stop();
+        }
 
-        return 0;
+        this.driveConfig.stop();
+
+        this.instanceRunning = false;
+        MecanumWheels.running = false;
+
+        this.setError(Error.NO_ERROR);
+
+        return System.currentTimeMillis() - startTime;
     }
 
-    /**
-     * @brief Resets the operation that the class will follow.
-     * @return returns -1 if class isn't active; returns 0 on success.
-     */
-    public int resetOperation() {
-        if(!this.active)
-            return -1;
-        this.operation = new ArrayList<DriveOperation>();
-        return 0;
+    private void setError(Error error) {
+        this.lastError = error;
+    }
+    public Error getError() {
+        return this.lastError;
+    }
+    private Error lastError = Error.NO_ERROR;
+
+    private static class MotorSetting {
+        private MotorSetting(MotorSetting object) {
+            for(byte a = 0; a < motors.length; a++)
+                this.motors[a] = object.motors[a];
+        }
+        private MotorSetting() {}
+
+        private void setMotor(double power, Motor index) {
+            this.motors[index.getValue()] = power;
+        }
+
+        private double[] getMotor() {
+            double returnArray[] = new double[this.motors.length];
+
+            for(int a = 0; a < this.motors.length; a++)
+                returnArray[a] = this.motors[a];
+
+            return returnArray;
+        }
+        private double motors[];
     }
 
-    protected  boolean active = true;
-    protected static boolean isInstance = false;
-    protected DriveTrain driveTrain;
-    protected double width;
-    protected  double height;
-    protected ArrayList<DriveOperation> operation;
-    protected double INFINITY = Double.POSITIVE_INFINITY;
+    private static boolean running = false;
+    static boolean isRunning() {
+        return MecanumWheels.running;
+    }
+    private boolean instanceRunning = false;
+
+    private BoundType bound;
+    private double boundValue;
+    private boolean normalized;
+    private MecanumWheels.MotorSetting settings;
+    private boolean isPathUpdated;
+    private Drive driveConfig;
+    private long startTime;
 }

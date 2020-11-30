@@ -1,30 +1,116 @@
 package Milkdromeda.RobotFunctions.MecanumWheels;
 
-class DriveOperation {
-    /**
-     * @brief Creates a new DriveOperation instance.
-     * @param motor An array of motor power indexed according to motor index.
-     */
-    DriveOperation(double motor[]) { this.motor = motor; }
+import java.util.ArrayList;
 
-    /**
-     * @brief Returns the motor at given index.
-     * @param index The index of the motor to be returned.
-     * @return A double between -1.0 and 1.0 of the power of the motor.
-     */
-    public double getMotor(Motor index) { return this.motor[index.getValue()]; }
+import RobotFunctions.Error;
 
-    /**
-     * @brief Returns all 4 motors on the drive train indexed according to motor index.
-     * @return A new array of all the motor powers on the drive train.
-     */
-    public double[] getMotors() {
-        double returnValue[] = new double[4];
-        for(int a = 0; a < motor.length; a++)
-            returnValue[a] = this.motor[a];
-
-        return returnValue;
+public class DriveOperation extends Thread{
+    public DriveOperation() {
+        this.mecanumWheelsOperations = new ArrayList<MecanumWheels>();
+        this.template = null;
+        this.object = null;
+        this.cursor = -1;
+    }
+    public DriveOperation(MecanumWheels template) {
+        this();
+        this.template = template;
     }
 
-    private double motor[];
+    public void setCursor(int index) {
+        if (index < -1 || index >= this.mecanumWheelsOperations.size()) {
+            this.setError(Error.ARGUMENTS_OUT_OF_BOUND);
+            return;
+        }
+        if (index == -1) {
+            this.cursor = -1;
+        }
+        else
+            this.cursor = index;
+
+        this.setError(Error.NO_ERROR);
+    }
+    public void remove() {
+        if(this.cursor == -1)
+            this.delete();
+        else
+            this.delete(this.cursor);
+    }
+    public void add(MecanumWheels object) {
+        if(this.cursor == -1)
+            this.set(object);
+        else
+            this.set(this.cursor, object);
+    }
+
+    public MecanumWheels get(int index) {
+        if(index >= this.mecanumWheelsOperations.size()) {
+            this.setError(Error.ARGUMENTS_OUT_OF_BOUND);
+            return null;
+        }
+
+        this.setError(Error.NO_ERROR);
+        return this.mecanumWheelsOperations.get(index);
+    }
+    public void set(int index, MecanumWheels operation) {
+        this.mecanumWheelsOperations.set(index, operation);
+
+        this.setError(Error.NO_ERROR);
+    }
+    public void set(MecanumWheels operation) {
+        this.mecanumWheelsOperations.add(operation);
+
+        this.setError(Error.NO_ERROR);
+    }
+    public void delete() {
+        this.delete(this.mecanumWheelsOperations.size() - 1);
+    }
+    public void delete(int index) {
+        if(index >= this.mecanumWheelsOperations.size()) {
+            this.setError(Error.ARGUMENTS_OUT_OF_BOUND);
+            return;
+        }
+
+        this.mecanumWheelsOperations.remove(index);
+    }
+
+    @Override
+    public void run() {
+        if(DriveOperation.isRunning) {
+            this.setError(Error.PROCESS_ALREADY_RUNNING);
+            return;
+        }
+
+        this.progress = 0;
+        this.isRunning = true;
+
+        while(this.progress < this.mecanumWheelsOperations.size()) {
+            
+        }
+
+        this.isRunning = false;
+    }
+    public int next() {
+    }
+
+
+    public int getProgress() {}
+    public int getNumOfOperations() {}
+
+    private void setError(Error error) {
+        this.error = error;
+    }
+    public Error getError() {
+        return this.error;
+    }
+    private Error error;
+
+    private ArrayList<MecanumWheels> mecanumWheelsOperations;
+    private MecanumWheels template;
+    private int cursor;
+    private int progress;
+    private Drive driveConfig;
+
+    private static boolean isRunning = false;
+
+    public MecanumWheels object;
 }

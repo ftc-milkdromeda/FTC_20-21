@@ -3,7 +3,6 @@ package RobotFunctions.MecanumWheels;
 import java.util.ArrayList;
 import RobotFunctions.Error;
 import RobotFunctions.Units_time;
-import org.jetbrains.annotations.NotNull;
 
 public class Operation extends Thread{
     public Operation() {
@@ -30,7 +29,7 @@ public class Operation extends Thread{
         this.endTime = -1;
         this.object = null;
     }
-    public Operation(@NotNull Operation o) {
+    public Operation(Operation o) {
         this.template = o.template;
         this.queue = o.queue;
         this.template = o.template;
@@ -60,11 +59,7 @@ public class Operation extends Thread{
 
     public void add() {
         if(this.template == null) {
-            this.setError(Error.O_NO_TEMPLATE_PROVIDED);
-            return;
-        }
-        if(this.isRunning) {
-            this.setError(Error.O_THREAD_ALREADY_STARTED);
+            this.setError(Error.NO_TEMPLATE_PROVIDED);
             return;
         }
 
@@ -76,11 +71,6 @@ public class Operation extends Thread{
         this.setError(Error.NO_ERROR);
     }
     public void add(MecanumWheels o) {
-        if(this.isRunning) {
-            this.setError(Error.O_THREAD_ALREADY_STARTED);
-            return;
-        }
-
         if(this.cursor == -1)
             this.queue.add(o);
         else
@@ -89,11 +79,6 @@ public class Operation extends Thread{
         this.setError(Error.NO_ERROR);
     }
     public void remove() {
-        if(this.isRunning) {
-            this.setError(Error.O_THREAD_ALREADY_STARTED);
-            return;
-        }
-
         if(this.cursor == -1)
             this.queue.remove(this.queue.size() - 1);
 
@@ -102,11 +87,6 @@ public class Operation extends Thread{
         this.setError(Error.NO_ERROR);
     }
     public void removeAfter() {
-        if(this.isRunning) {
-            this.setError(Error.O_THREAD_ALREADY_STARTED);
-            return;
-        }
-
         if(cursor != -1)
             for(int a = cursor + 1; a < queue.size(); a++)
                 this.queue.remove(this.cursor + 1);
@@ -114,11 +94,6 @@ public class Operation extends Thread{
         this.setError(Error.NO_ERROR);
     }
     public void removeBefore() {
-        if(this.isRunning) {
-            this.setError(Error.O_THREAD_ALREADY_STARTED);
-            return;
-        }
-
         if(cursor != -1)
             for(int a = 0; a < this.cursor; a++)
                 this.queue.remove(0);
@@ -126,11 +101,6 @@ public class Operation extends Thread{
         this.setError(Error.NO_ERROR);
     }
     public void setStart(int startPosition) {
-        if(this.isRunning) {
-            this.setError(Error.O_THREAD_ALREADY_STARTED);
-            return;
-        }
-
         this.startPosition = startPosition;
 
         this.setError(Error.NO_ERROR);
@@ -139,7 +109,7 @@ public class Operation extends Thread{
     @Override
     public synchronized void start() {
         if(this.isRunning) {
-            this.setError(Error.O_THREAD_ALREADY_STARTED);
+            this.setError(Error.PROCESS_ALREADY_RUNNING);
             return;
         }
 
@@ -149,7 +119,7 @@ public class Operation extends Thread{
         super.start();
     }
     @Override
-    public void run() {
+    public synchronized void run() {
         for(int a = this.startPosition; a < this.queue.size(); a++) {
             this.cursor = a;
             this.object = this.queue.get(a);
@@ -159,7 +129,7 @@ public class Operation extends Thread{
                 if(this.interrupt == Interrupt.STOP) {
                     this.object.stop();
                     this.object = null;
-                    this.setError(Error.O_EXECUTION_STOPPED_FORCEFULLY);
+                    this.setError(Error.EXECUTION_STOPPED_FORCEFULLY);
                     return;
                 }
 
@@ -172,13 +142,13 @@ public class Operation extends Thread{
         this.object.updateDrive();
         this.setError(Error.NO_ERROR);
     }
-    public void next() {
+    public synchronized void next() {
         this.interrupt = Interrupt.NEXT;
         this.setError(Error.NO_ERROR);
     }
     public void end() {
         if(!this.isRunning) {
-            this.setError(Error.O_THREAD_NOT_STARTED);
+            this.setError(Error.NO_PROCESS_RUNNING);
             return;
         }
 
@@ -191,7 +161,7 @@ public class Operation extends Thread{
     }
     public double getRuntime(Units_time units) {
         if(startTime == -1) {
-            this.setError(Error.O_THREAD_NOT_STARTED);
+            this.setError(Error.THREAD_NOT_STARTED);
             return 0;
         }
         this.setError(Error.NO_ERROR);
@@ -231,6 +201,3 @@ public class Operation extends Thread{
 
     public MecanumWheels object;
 }
-
-//todo need to add a closed loop feedback system for with odometry.
-//todo need to utilize error handling provided by MecanumWheels.

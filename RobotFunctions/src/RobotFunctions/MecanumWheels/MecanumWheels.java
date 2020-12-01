@@ -13,11 +13,13 @@ public class MecanumWheels {
         this.isPathUpdated = false;
         this.instanceRunning = false;
         this.driveConfig = driveConfig;
-        this.startTime = 0;
+        this.startTime = -1;
+        this.endTime = -1;
+        this.isPathUpdated = true;
+        this.currentProcedure = null;
 
         this.setError(Error.NO_ERROR);
     }
-
     MecanumWheels(MecanumWheels object) {
         this.bound = object.bound;
         this.boundValue = object.boundValue;
@@ -26,7 +28,10 @@ public class MecanumWheels {
         this.isPathUpdated = false;
         this.driveConfig = object.driveConfig;
         this.instanceRunning = false;
-        this.startTime = 0;
+        this.startTime = -1;
+        this.endTime = -1;
+        this.isPathUpdated = true;
+        this.currentProcedure = null;
 
         this.setError(Error.NO_ERROR);
    }
@@ -35,6 +40,7 @@ public class MecanumWheels {
         this.setError(Error.NO_ERROR);
         this.settings = new MotorSetting(this.settings);
         this.isPathUpdated = true;
+        this.currentProcedure = object.currentProcedure;
 
         this.setError(Error.NO_ERROR);
    }
@@ -82,17 +88,26 @@ public class MecanumWheels {
     public double getRunTime(Units_time units) {
         this.setError(Error.NO_ERROR);
     }
-
     //todo fill in getRunDistance.
     public double getRunDistance(Units_length units) {
         this.setError(Error.NO_ERROR);
     }
 
-    void drive() {
+    public Procedure getCurrentProcedure() {
+        if(currentProcedure == null)
+            this.setError(Error.NO_PROCEDURE_SET);
+        else
+            this.setError(Error.NO_ERROR);
+        return currentProcedure;
+    }
+
+    public void drive() {
         if(MecanumWheels.running) {
             this.setError(Error.PROCESS_ALREADY_RUNNING);
             return;
         }
+        if(!this.isPathUpdated)
+            this.addTrajectory(this.currentProcedure);
 
         MecanumWheels.running = true;
         this.instanceRunning = true;
@@ -102,18 +117,22 @@ public class MecanumWheels {
 
         this.setError(Error.NO_ERROR);
     }
-    void updateDrive() {
+    public void updateDrive() {
         if(!this.instanceRunning)
             this.setError(Error.NO_PROCESS_RUNNING);
+
+        if(!this.isPathUpdated)
+            this.addTrajectory(this.currentProcedure);
 
         this.driveConfig.setMotor(this.settings.getMotor());
 
         this.setError(Error.NO_ERROR);
     }
-    long stop() {
+    public void stop() {
+        //todo add stop types for more easy transition between different operations
         if(!this.instanceRunning) {
             this.setError(Error.NO_PROCESS_RUNNING);
-            return -1;
+            return;
         }
 
         this.driveConfig.stop();
@@ -122,9 +141,24 @@ public class MecanumWheels {
         MecanumWheels.running = false;
 
         this.setError(Error.NO_ERROR);
-
-        return System.currentTimeMillis() - startTime;
     }
+    public void hardStop() {
+        this.driveConfig.stop();
+        this.setError(Error.NO_ERROR);
+    }
+    public double getRuntime(Units_time units) {
+        if(startTime == -1) {
+            this.setError(Error.NO_PROCESS_RUNNING);
+            return 0;
+        }
+        this.setError(Error.NO_ERROR);
+
+        if(endTime == -1)
+            return (System.currentTimeMillis() - startTime) / (1000f * units.getValue());
+
+        return (endTime - startTime) / (1000f * units.getValue());
+    }
+
 
     private void setError(Error error) {
         this.lastError = error;
@@ -169,4 +203,8 @@ public class MecanumWheels {
     private boolean isPathUpdated;
     private Drive driveConfig;
     private long startTime;
+    private long endTime;
+    private Procedure currentProcedure;
 }
+
+//todo need to add a closed-loop feedback system with wheel encoders.

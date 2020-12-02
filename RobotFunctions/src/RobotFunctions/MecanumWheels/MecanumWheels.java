@@ -3,8 +3,19 @@ package RobotFunctions.MecanumWheels;
 import RobotFunctions.Units_length;
 import RobotFunctions.Units_time;
 import RobotFunctions.Error;
+import org.jetbrains.annotations.NotNull;
 
 public class MecanumWheels {
+    private MotorSetting normalizePower(MotorSetting settings) {
+        //todo add and test formula for normalizing motor power.
+    }
+    private double getPivotDistance(double pivot) {
+        double a = 2.5;
+        if(pivot == 0)
+            return Double.POSITIVE_INFINITY;
+        return a * 1 / pivot + a * Math.signum(pivot);
+    }
+
     MecanumWheels(Drive driveConfig) {
         this.bound = BoundType.NONE;
         this.boundValue = -1;
@@ -20,7 +31,7 @@ public class MecanumWheels {
 
         this.setError(Error.NO_ERROR);
     }
-    MecanumWheels(MecanumWheels object) {
+    MecanumWheels(@NotNull MecanumWheels object) {
         this.bound = object.bound;
         this.boundValue = object.boundValue;
         this.normalized = object.normalized;
@@ -36,7 +47,7 @@ public class MecanumWheels {
         this.setError(Error.NO_ERROR);
    }
 
-   public void copyMotorSetting(MecanumWheels object) {
+   public void copyMotorSetting(@NotNull MecanumWheels object) {
         this.setError(Error.NO_ERROR);
         this.settings = new MotorSetting(this.settings);
         this.isPathUpdated = true;
@@ -46,7 +57,10 @@ public class MecanumWheels {
    }
 
     //todo fill in add Trajectory
-    public void addTrajectory(Procedure procedure) {}
+    public void addTrajectory(Procedure procedure) {
+        double F_0 = Math.sin(procedure.getAngle() + Math.PI / 4);
+        double F_1 = Math.sin(procedure.getAngle() - Math.PI / 4);
+    }
     public void setNormalized(boolean normalized) {
         if(this.normalized == normalized)
             return;
@@ -55,13 +69,13 @@ public class MecanumWheels {
 
         this.setError(Error.NO_ERROR);
     }
-    public void setDistanceBounds(double distance, Units_length units) {
+    public void setDistanceBounds(double distance, @NotNull Units_length units) {
         this.bound = BoundType.DISTANCE;
         this.boundValue = distance * units.getValue();
 
         this.setError(Error.NO_ERROR);
     }
-    public void setTimeBounds(double time, Units_time units) {
+    public void setTimeBounds(double time, @NotNull Units_time units) {
         this.bound = BoundType.TIME;
         this.boundValue = time * units.getValue();
 
@@ -158,7 +172,6 @@ public class MecanumWheels {
 
         return (endTime - startTime) / (1000f * units.getValue());
     }
-
 
     private void setError(Error error) {
         this.lastError = error;

@@ -3,6 +3,7 @@ package RobotFunctions.MecanumWheels;
 import java.util.ArrayList;
 import RobotFunctions.Error;
 import RobotFunctions.Units_time;
+import org.jetbrains.annotations.NotNull;
 
 public class Operation extends Thread{
     public Operation() {
@@ -29,7 +30,7 @@ public class Operation extends Thread{
         this.endTime = -1;
         this.object = null;
     }
-    public Operation(Operation o) {
+    public Operation(@NotNull Operation o) {
         this.template = o.template;
         this.queue = o.queue;
         this.template = o.template;

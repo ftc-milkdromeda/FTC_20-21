@@ -1,14 +1,14 @@
 package RobotFunctions.MecanumWheels;
 
-import RobotFunctions.Units;
+import RobotFunctions.Units_length;
 
 public class RoughMecanumWheels extends MecanumWheels{
-    public static RoughMecanumWheels instance(Drive drive, double width, double height, Units units) {
+    public static RoughMecanumWheels instance(Drive drive, double width, double height, Units_length units) {
         if(MecanumWheels.isInstance)
             return null;
         return new RoughMecanumWheels(drive, width, height, units);
     }
-    protected RoughMecanumWheels(Drive drive, double width, double height, Units units) {
+    protected RoughMecanumWheels(Drive drive, double width, double height, Units_length units) {
         super(drive, width, height, units);
         super.operation.add(null);
     }

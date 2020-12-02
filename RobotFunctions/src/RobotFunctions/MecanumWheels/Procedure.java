@@ -1,6 +1,6 @@
 package RobotFunctions.MecanumWheels;
 
-import RobotFunctions.Units;
+import RobotFunctions.Units_length;
 
 import java.util.Vector;
 
@@ -14,7 +14,7 @@ public class Procedure{
         vector[2] = pivot;
 
     }
-    public Procedure(double x, double y, double w, double magnitude, Units units) {
+    public Procedure(double x, double y, double w, double magnitude, Units_length units) {
         mode = Mode.POINT;
 
         point = new double[3];

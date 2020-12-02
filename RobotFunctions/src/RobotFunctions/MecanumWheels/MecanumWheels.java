@@ -1,6 +1,6 @@
 package RobotFunctions.MecanumWheels;
 
-import RobotFunctions.Units;
+import RobotFunctions.Units_length;
 import java.util.ArrayList;
 
 /**
@@ -15,7 +15,7 @@ public abstract class MecanumWheels {
      * @param height The length between the two side wheels on the drive train.
      * @param units Units used to make the measurements.
      */
-    protected MecanumWheels(Drive drive, double width, double height, Units units) {
+    protected MecanumWheels(Drive drive, double width, double height, Units_length units) {
         this.drive = drive;
         this.width = width * units.getValue();
         this.height = height * units.getValue();

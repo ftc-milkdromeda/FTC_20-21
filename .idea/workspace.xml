@@ -6,10 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Added todo">
+    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/PrecisionMecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/PrecisionMecanumWheels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Procedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Procedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/RoughMecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/RoughMecanumWheels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +52,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TODO_SCOPE" value="All Places" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -246,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606017286937</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed merge issues">
+      <created>1606892977508</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1606892977508</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,7 +293,8 @@
     <MESSAGE value="Added new files for potential new functions" />
     <MESSAGE value="Added new CourseCorrection class" />
     <MESSAGE value="Changes to project files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes to project files." />
+    <MESSAGE value="Fixed merge issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed merge issues" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
@@ -316,10 +329,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
-    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606017286477">
+    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606893241569">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606017286477" />
+    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606893241569" />
     <state x="714" y="238" key="DetectedRootsChooserDialog" timestamp="1601564373133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

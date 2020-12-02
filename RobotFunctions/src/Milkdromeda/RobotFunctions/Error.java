@@ -17,7 +17,6 @@ public enum Error {
     ARGUMENTS_OUT_OF_BOUND(-3),
     INVALID_STATES(-4),
     NO_ERROR(0);
-
     private int errorCode;
     private Error(int errorCode) {
         this.errorCode = errorCode;

@@ -6,15 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Changed name from Units to Units">
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/BoundType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
+    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Drive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Procedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MecanumWheels/Procedure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/MecanumDrive.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/MecanumDrive.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -331,7 +326,91 @@
       <option name="project" value="LOCAL" />
       <updated>1606696766496</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Added new functions to Drive; reformated the file for better readability.">
+      <created>1606719767070</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1606719767070</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Added new enum to deal with bounds used through out the package.">
+      <created>1606719800580</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1606719800580</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Fixed some bugs.">
+      <created>1606719848620</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1606719848620</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Miscellaneous changes.">
+      <created>1606719937149</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1606719937149</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Added new MecanumWheels class replacing old version; need to fill in a couple more functions.">
+      <created>1606720229350</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1606720229350</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Implemented new way to string up MecanumWheels operations; still need to add an odometry closed-loop feedback.">
+      <created>1606844124881</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1606844124881</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Added a todo statement.">
+      <created>1606844240445</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1606844240445</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added todo statement">
+      <created>1606844516411</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1606844516411</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Added clock to class; changed logic errors within the class.">
+      <created>1606845056706</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1606845056706</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Added NotNull annotation to arguments.">
+      <created>1606886263791</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1606886263791</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Added new simpler Procedure class.">
+      <created>1606891510269</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1606891510269</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Started work on the calculation of trajectory.">
+      <created>1606892722249</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1606892722249</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,18 +427,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Java Files" />
-    <MESSAGE value="Committing project files" />
-    <MESSAGE value="Made project structure changes" />
-    <MESSAGE value="Finished the RoughMecanumWheels class; tested on computer; ready for real world testing" />
-    <MESSAGE value="Debuged RoughMecanumWheels; Began PrecisionMecanumWheels; Finished Odometry class interface; need to add Odometry logic for calculating displacement." />
-    <MESSAGE value="RobotFunctions v0.1" />
-    <MESSAGE value="Made some documentation changes; Changed return variable in DriveOperation." />
-    <MESSAGE value="Reorganized some things around in the project." />
-    <MESSAGE value="Added a way to index gamepads." />
-    <MESSAGE value="Added driver to convert gamepad from FTC to inputs for RobotFunctions" />
-    <MESSAGE value="Added new files for potential new functions" />
-    <MESSAGE value="Added new CourseCorrection class" />
     <MESSAGE value="Changes to project files." />
     <MESSAGE value="Added enum for easier error management." />
     <MESSAGE value="Deleted files omitted in new version" />
@@ -373,13 +440,29 @@
     <MESSAGE value="Update motor enum to be able to cast int to enum." />
     <MESSAGE value="Added class to manage MecanumWheels objects." />
     <MESSAGE value="Deleted DriveOperation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted DriveOperation." />
+    <MESSAGE value="Added new functions to Drive; reformated the file for better readability." />
+    <MESSAGE value="Added new enum to deal with bounds used through out the package." />
+    <MESSAGE value="Fixed some bugs." />
+    <MESSAGE value="Miscellaneous changes." />
+    <MESSAGE value="Added new MecanumWheels class replacing old version; need to fill in a couple more functions." />
+    <MESSAGE value="Implemented new way to string up MecanumWheels operations; still need to add an odometry closed-loop feedback." />
+    <MESSAGE value="Added a todo statement." />
+    <MESSAGE value="Added todo statement" />
+    <MESSAGE value="Added clock to class; changed logic errors within the class." />
+    <MESSAGE value="Added NotNull annotation to arguments." />
+    <MESSAGE value="Added new simpler Procedure class." />
+    <MESSAGE value="Started work on the calculation of trajectory." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work on the calculation of trajectory." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1606338090546">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1606338090546" />
+    <state x="552" y="178" key="#Vim_Emulation" timestamp="1606843030684">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Vim_Emulation/0.0.1920.1040@0.0.1920.1040" timestamp="1606843030684" />
     <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602135584837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -388,10 +471,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="599" y="213" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601570417083" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1606348921103">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1606790350782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606348921103" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1606790350782" />
     <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601563529647">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -408,10 +491,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
-    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606719908485">
+    <state x="566" y="118" key="CommitChangelistDialog2" timestamp="1606892741971">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606719908485" />
+    <state x="566" y="118" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1606892741971" />
     <state x="714" y="238" key="DetectedRootsChooserDialog" timestamp="1601564373133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -472,18 +555,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="790" y="392" key="VCS.EditChangelistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601782471420" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1605973486009">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1606886282408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605973486009" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1606886282408" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605916110183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605916110183" />
-    <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601569253874">
+    <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606883325073">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1601569253874" />
+    <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1606883325073" />
     <state x="766" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605475438843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

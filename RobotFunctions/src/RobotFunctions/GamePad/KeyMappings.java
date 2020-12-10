@@ -36,21 +36,21 @@ public abstract class KeyMappings {
         if(this.y != null)
             return Error.KM_PREVIOUS_THREAD_ALREADY_STARTED;
 
-        this.y = this.controller.get_X();
+        this.y = this.controller.get_Y();
         return Error.NO_ERROR;
     }
     public synchronized Error a() {
         if(this.a != null)
             return Error.KM_PREVIOUS_THREAD_ALREADY_STARTED;
 
-        this.a = this.controller.get_X();
+        this.a = this.controller.get_Y();
         return Error.NO_ERROR;
     }
     public synchronized Error b() {
         if(this.b != null)
             return Error.KM_PREVIOUS_THREAD_ALREADY_STARTED;
 
-        this.b = this.controller.get_X();
+        this.b = this.controller.get_B();
         return Error.NO_ERROR;
     }
     public synchronized Error leftBumper() {

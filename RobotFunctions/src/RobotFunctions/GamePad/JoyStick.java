@@ -1,6 +1,6 @@
 package RobotFunctions.GamePad;
 
-public class JoySticks {
+public class JoyStick {
     public double X;
     public double Y;
 

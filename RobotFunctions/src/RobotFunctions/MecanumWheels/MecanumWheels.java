@@ -109,7 +109,7 @@ public class MecanumWheels {
 
     public Procedure getCurrentProcedure() {
         if(currentProcedure == null)
-            this.setError(Error.NO_PROCEDURE_SET);
+            this.setError(Error.MW_NO_PROCEDURE_SET);
         else
             this.setError(Error.NO_ERROR);
         return currentProcedure;
@@ -117,7 +117,7 @@ public class MecanumWheels {
 
     public void drive() {
         if(MecanumWheels.running) {
-            this.setError(Error.PROCESS_ALREADY_RUNNING);
+            this.setError(Error.MW_PROCESS_ALREADY_RUNNING);
             return;
         }
         if(!this.isPathUpdated)
@@ -133,7 +133,7 @@ public class MecanumWheels {
     }
     public void updateDrive() {
         if(!this.instanceRunning)
-            this.setError(Error.NO_PROCESS_RUNNING);
+            this.setError(Error.MW_NO_PROCESS_RUNNING);
 
         if(!this.isPathUpdated)
             this.addTrajectory(this.currentProcedure);
@@ -145,7 +145,7 @@ public class MecanumWheels {
     public void stop() {
         //todo add stop types for more easy transition between different operations
         if(!this.instanceRunning) {
-            this.setError(Error.NO_PROCESS_RUNNING);
+            this.setError(Error.MW_NO_PROCESS_RUNNING);
             return;
         }
 
@@ -162,7 +162,7 @@ public class MecanumWheels {
     }
     public double getRuntime(Units_time units) {
         if(startTime == -1) {
-            this.setError(Error.NO_PROCESS_RUNNING);
+            this.setError(Error.MW_NO_PROCESS_RUNNING);
             return 0;
         }
         this.setError(Error.NO_ERROR);

@@ -1,6 +1,7 @@
 package RobotFunctions.MecanumWheels;
 
-import RobotFunctions.Units;
+import RobotFunctions.Units_length;
+
 import java.util.ArrayList;
 
 /**
@@ -16,7 +17,7 @@ public class PrecisionMecanumWheels extends MecanumWheels
      * @param units The units used to measure the distance of the wheels.
      * @return Returns a new instance of PrecisionMecanumWheels; returns null if an error occurred.
      */
-    public static PrecisionMecanumWheels instance(Drive drive, double width, double height, Units units) {
+    public static PrecisionMecanumWheels instance(Drive drive, double width, double height, Units_length units) {
         if(MecanumWheels.isInstance)
             return null;
         return new PrecisionMecanumWheels(drive, width, height, units);
@@ -29,7 +30,7 @@ public class PrecisionMecanumWheels extends MecanumWheels
      * @param height The distance between the two side wheels on the drive train.
      * @param units The units used to measure the distance of the wheels.
      */
-    private PrecisionMecanumWheels(Drive drive, double width, double height, Units units)  {
+    private PrecisionMecanumWheels(Drive drive, double width, double height, Units_length units)  {
         super(drive, width, height, units);
         states = new ArrayList<FinalState>();
     }

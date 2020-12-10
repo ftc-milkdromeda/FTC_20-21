@@ -16,6 +16,9 @@ public enum Error {
     NO_TEMPLATE_PROVIDED(102),
     THREAD_NOT_STARTED(103),
 
+    //errors for GamePad.KeyMappings
+    KM_PREVIOUS_THREAD_ALREADY_STARTED(201),
+
     NO_ERROR(0);
     private int errorCode;
     private Error(int errorCode) {

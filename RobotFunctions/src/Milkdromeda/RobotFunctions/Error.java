@@ -1,4 +1,4 @@
-package Milkdromeda.RobotFunctions;
+package RobotFunctions;
 
 public enum Error {
     //errors for MecanumWheels.MecanumWheels
@@ -11,6 +11,9 @@ public enum Error {
     O_NO_TEMPLATE_PROVIDED(102),
     O_THREAD_NOT_STARTED(103),
     O_THREAD_ALREADY_STARTED(104),
+
+    //errors for GamePad.KeyMappings
+    KM_PREVIOUS_THREAD_ALREADY_STARTED(201),
 
     CLASS_NOT_ACTIVE(-1),
     DIVISION_BY_ZERO(-2),

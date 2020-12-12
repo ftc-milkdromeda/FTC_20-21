@@ -43,7 +43,7 @@ public abstract class KeyMappings {
         if(this.a != null)
             return Error.KM_PREVIOUS_THREAD_ALREADY_STARTED;
 
-        this.a = this.controller.get_Y();
+        this.a = this.controller.get_A();
         return Error.NO_ERROR;
     }
     public synchronized Error b() {

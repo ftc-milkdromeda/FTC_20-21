@@ -6,9 +6,11 @@ import RobotFunctions.Error;
 import org.jetbrains.annotations.NotNull;
 
 public class MecanumWheels {
-    private MotorSetting normalizePower(MotorSetting settings) {
+    private MotorSettings normalizePower(MotorSettings settings) {
         //todo add and test formula for normalizing motor power.
+        return null;
     }
+
     private double getPivotDistance(double pivot) {
         double a = 2.5;
         if(pivot == 0)
@@ -16,11 +18,10 @@ public class MecanumWheels {
         return a * 1 / pivot + a * Math.signum(pivot);
     }
 
-    MecanumWheels(Drive driveConfig) {
+    MecanumWheels(Drive driveConfig, double width, double length, Units_length units) {
         this.bound = BoundType.NONE;
         this.boundValue = -1;
         this.normalized = false;
-        this.settings = new MotorSetting();
         this.isPathUpdated = false;
         this.instanceRunning = false;
         this.driveConfig = driveConfig;
@@ -28,6 +29,8 @@ public class MecanumWheels {
         this.endTime = -1;
         this.isPathUpdated = true;
         this.currentProcedure = null;
+        this.width = width;
+        this.length = length;
 
         this.setError(Error.NO_ERROR);
     }
@@ -35,7 +38,6 @@ public class MecanumWheels {
         this.bound = object.bound;
         this.boundValue = object.boundValue;
         this.normalized = object.normalized;
-        this.settings = new MotorSetting();
         this.isPathUpdated = false;
         this.driveConfig = object.driveConfig;
         this.instanceRunning = false;
@@ -43,13 +45,15 @@ public class MecanumWheels {
         this.endTime = -1;
         this.isPathUpdated = true;
         this.currentProcedure = null;
+        this.width = object.width;
+        this.length = object.length;
 
         this.setError(Error.NO_ERROR);
    }
 
    public void copyMotorSetting(@NotNull MecanumWheels object) {
         this.setError(Error.NO_ERROR);
-        this.settings = new MotorSetting(this.settings);
+        this.settings = new MotorSettings(this.settings);
         this.isPathUpdated = true;
         this.currentProcedure = object.currentProcedure;
 
@@ -58,9 +62,58 @@ public class MecanumWheels {
 
     //todo fill in add Trajectory
     public void addTrajectory(Procedure procedure) {
+        double wheels[] = new double[4];
+
+        //calculating strafe
+        //operation: sin(R + PI/4)
         double F_0 = Math.sin(procedure.getAngle() + Math.PI / 4);
         double F_1 = Math.sin(procedure.getAngle() - Math.PI / 4);
+
+        wheels[Motor.UPPER_LEFT.getValue()] = F_0;
+        wheels[Motor.LOWER_RIGHT.getValue()] = F_0;
+        wheels[Motor.UPPER_RIGHT.getValue()] = F_1;
+        wheels[Motor.LOWER_LEFT.getValue()] = F_1;
+
+        //calculate pivot
+        //TODO fix pivot calcuation.
+        Pivot: //skips if pivot distance is less than infinity
+        {
+            double wheel_x = this.width / 2;
+            double wheel_y = this.length / 2;
+            double pivotDistance = this.getPivotDistance(procedure.getPivot()) * Math.sqrt(Math.pow(wheel_x, 2) + Math.pow(wheel_y, 2));
+            if(pivotDistance == Double.POSITIVE_INFINITY) //testing if pivot is less than 0
+                break Pivot;
+            else if(pivotDistance == 0) {
+                wheels[0] = -1 * Math.signum(procedure.getPivot());
+                wheels[1] = -1 * Math.signum(procedure.getPivot());
+                wheels[2] = Math.signum(procedure.getPivot());
+                wheels[3] = Math.signum(procedure.getPivot());
+                break Pivot;
+            }
+
+            //operation: P_x = P_d * cos(R + pi/2)
+            double pivot_x = pivotDistance * Math.cos((Math.PI / 2) + procedure.getAngle());
+            //operation: P_y = P_d * sin(R + pi/2)
+            double pivot_y = pivotDistance * Math.sin((Math.PI / 2) + procedure.getAngle());
+
+            //operation: r = sqrt[ (W_x - C_x)^2 + (W_y - C_y)^2 ]
+            wheels[Motor.UPPER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
+            wheels[Motor.UPPER_LEFT.getValue()]*= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(wheel_y - pivot_y, 2));
+            wheels[Motor.LOWER_LEFT.getValue()] *= Math.sqrt(Math.pow(-1 * wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
+            wheels[Motor.LOWER_RIGHT.getValue()] *= Math.sqrt(Math.pow(wheel_x - pivot_x, 2) + Math.pow(-1 * wheel_y - pivot_y, 2));
+        }
+        //normalizing range between -1.0 - 1.0
+        double maxValue = Math.abs(wheels[0]);
+        for(int a = 1; a < 4; a++)
+            maxValue = Math.abs(maxValue) < Math.abs(wheels[a]) ? Math.abs(wheels[a]) : maxValue;
+
+        for(int a = 0; a < 4; a++)
+            //operation: W_m = (W_m / W_max) * M_net
+            wheels[a] *= procedure.getMagnitude() / maxValue;
+
+        this.settings = new MotorSettings(wheels);
     }
+
     public void setNormalized(boolean normalized) {
         if(this.normalized == normalized)
             return;
@@ -82,7 +135,7 @@ public class MecanumWheels {
         this.setError(Error.NO_ERROR);
     }
     public void deleteTrajectory() {
-        this.settings = new MotorSetting();
+        this.settings = null;
 
         this.setError(Error.NO_ERROR);
     }
@@ -101,10 +154,12 @@ public class MecanumWheels {
     //todo fill in getRunTime
     public double getRunTime(Units_time units) {
         this.setError(Error.NO_ERROR);
+        return 0;
     }
     //todo fill in getRunDistance.
     public double getRunDistance(Units_length units) {
         this.setError(Error.NO_ERROR);
+        return 0;
     }
 
     public Procedure getCurrentProcedure() {
@@ -181,12 +236,15 @@ public class MecanumWheels {
     }
     private Error lastError = Error.NO_ERROR;
 
-    private static class MotorSetting {
-        private MotorSetting(MotorSetting object) {
+    private static class MotorSettings {
+        private MotorSettings(MotorSettings object) {
             for(byte a = 0; a < motors.length; a++)
                 this.motors[a] = object.motors[a];
         }
-        private MotorSetting() {}
+        private MotorSettings(double motorSpeeds[]) {
+            for(int a = 0; a < 4; a++)
+                motorSpeeds[a] = this.motors[a];
+        }
 
         private void setMotor(double power, Motor index) {
             this.motors[index.getValue()] = power;
@@ -212,12 +270,14 @@ public class MecanumWheels {
     private BoundType bound;
     private double boundValue;
     private boolean normalized;
-    private MecanumWheels.MotorSetting settings;
+    private MotorSettings settings;
     private boolean isPathUpdated;
     private Drive driveConfig;
     private long startTime;
     private long endTime;
     private Procedure currentProcedure;
+    private double width;
+    private double length;
 }
 
 //todo need to add a closed-loop feedback system with wheel encoders.

@@ -1,5 +1,6 @@
 package RobotFunctions.MecanumWheels;
 
+import Drivers.DriveTrain;
 import RobotFunctions.Units_length;
 
 import java.util.ArrayList;
@@ -11,27 +12,27 @@ public class PrecisionMecanumWheels extends MecanumWheels
 {
     /**
      * @brief Makes a new instance of the PrecisionMecanumWheels class.
-     * @param drive An instance of a subclass of Drive.
+     * @param driveTrain An instance of a subclass of Drive.
      * @param width The distance between the two front wheels on the drive train.
      * @param height The distance between the two side wheels on the drive train.
      * @param units The units used to measure the distance of the wheels.
      * @return Returns a new instance of PrecisionMecanumWheels; returns null if an error occurred.
      */
-    public static PrecisionMecanumWheels instance(Drive drive, double width, double height, Units_length units) {
+    public static PrecisionMecanumWheels instance(DriveTrain driveTrain, double width, double height, Units_length units) {
         if(MecanumWheels.isInstance)
             return null;
-        return new PrecisionMecanumWheels(drive, width, height, units);
+        return new PrecisionMecanumWheels(driveTrain, width, height, units);
     }
 
     /**
      * @brief Constructor for PrecisonMecanumWheels class.
-     * @param drive An instance of a subclass of Drive.
+     * @param driveTrain An instance of a subclass of Drive.
      * @param width The distance between the two front wheels on the drive train.
      * @param height The distance between the two side wheels on the drive train.
      * @param units The units used to measure the distance of the wheels.
      */
-    private PrecisionMecanumWheels(Drive drive, double width, double height, Units_length units)  {
-        super(drive, width, height, units);
+    private PrecisionMecanumWheels(DriveTrain driveTrain, double width, double height, Units_length units)  {
+        super(driveTrain, width, height, units);
         states = new ArrayList<FinalState>();
     }
 

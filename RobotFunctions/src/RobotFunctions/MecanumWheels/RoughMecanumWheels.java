@@ -1,15 +1,16 @@
 package RobotFunctions.MecanumWheels;
 
+import Drivers.DriveTrain;
 import RobotFunctions.Units_length;
 
 public class RoughMecanumWheels extends MecanumWheels{
-    public static RoughMecanumWheels instance(Drive drive, double width, double height, Units_length units) {
+    public static RoughMecanumWheels instance(DriveTrain driveTrain, double width, double height, Units_length units) {
         if(MecanumWheels.isInstance)
             return null;
-        return new RoughMecanumWheels(drive, width, height, units);
+        return new RoughMecanumWheels(driveTrain, width, height, units);
     }
-    protected RoughMecanumWheels(Drive drive, double width, double height, Units_length units) {
-        super(drive, width, height, units);
+    protected RoughMecanumWheels(DriveTrain driveTrain, double width, double height, Units_length units) {
+        super(driveTrain, width, height, units);
         super.operation.add(null);
     }
 
@@ -19,7 +20,7 @@ public class RoughMecanumWheels extends MecanumWheels{
             return -1;
         if(operation.size() == 0)
             return 1;
-        super.drive.setMotors(super.operation.get(0).getMotors());
+        super.driveTrain.setMotors(super.operation.get(0).getMotors());
         return 0;
     }
 

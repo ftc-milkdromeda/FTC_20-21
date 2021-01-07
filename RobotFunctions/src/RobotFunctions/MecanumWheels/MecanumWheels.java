@@ -1,5 +1,6 @@
 package RobotFunctions.MecanumWheels;
 
+import Drivers.DriveTrain;
 import RobotFunctions.Units_length;
 import java.util.ArrayList;
 
@@ -10,13 +11,13 @@ import java.util.ArrayList;
 public abstract class MecanumWheels {
     /**
      * @brief Constructs new MecanumWheel objectfs
-     * @param drive instance of a subclass of Drive class.
+     * @param driveTrain instance of a subclass of Drive class.
      * @param width The length between the two front wheels on the drive train.
      * @param height The length between the two side wheels on the drive train.
      * @param units Units used to make the measurements.
      */
-    protected MecanumWheels(Drive drive, double width, double height, Units_length units) {
-        this.drive = drive;
+    protected MecanumWheels(DriveTrain driveTrain, double width, double height, Units_length units) {
+        this.driveTrain = driveTrain;
         this.width = width * units.getValue();
         this.height = height * units.getValue();
         this.operation = new ArrayList<DriveOperation>();
@@ -127,7 +128,7 @@ public abstract class MecanumWheels {
     public int stop() {
         if(!this.active)
             return -1;
-        this.drive.stop();
+        this.driveTrain.stop();
 
         return 0;
     }
@@ -145,7 +146,7 @@ public abstract class MecanumWheels {
 
     protected  boolean active = true;
     protected static boolean isInstance = false;
-    protected Drive drive;
+    protected DriveTrain driveTrain;
     protected double width;
     protected  double height;
     protected ArrayList<DriveOperation> operation;

@@ -5,18 +5,25 @@ import java.util.ArrayList;
 public class ThreadManager {
     private ThreadManager() {}
 
+    public static void stopProcess(int index) {
+        ThreadManager.threads.get(index).terminate();
+        ThreadManager.threads.set(index, null);
+
+        ThreadManager.numOfThreads--;
+    }
+    public static void stopClock(Clock clock) {
+        if(ThreadManager.clock != null) {
+            ThreadManager.clock.terminate();
+            ThreadManager.clock = null;
+            ThreadManager.numOfThreads--;
+        }
+    }
     static int attachProcess(Task thread) {
         ThreadManager.threads.add(thread);
 
         ThreadManager.numOfThreads++;
 
         return ThreadManager.threads.size() - 1;
-    }
-    static void stopProcess(int index) {
-        ThreadManager.threads.get(index).terminate();
-        ThreadManager.threads.set(index, null);
-
-        ThreadManager.numOfThreads--;
     }
     static boolean attachClock(Clock clock) {
         if(ThreadManager.clock == null) {
@@ -25,13 +32,6 @@ public class ThreadManager {
             return true;
         }
         return false;
-    }
-    static void stopClock(Clock clock) {
-        if(ThreadManager.clock != null) {
-            ThreadManager.clock.terminate();
-            ThreadManager.clock = null;
-            ThreadManager.numOfThreads--;
-        }
     }
 
     public static void stopAllProcess() {

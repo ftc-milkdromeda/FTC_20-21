@@ -1,5 +1,6 @@
 package Drivers;
 
+import Drivers.Template.Driver;
 import RobotFunctions.MecanumWheels.Motor;
 import RobotFunctions.Odometry.Odometry;
 import RobotFunctions.Odometry.RobotState;
@@ -8,7 +9,7 @@ import RobotFunctions.Units_length;
 /**
  * @brief Class that runs operations; class operations run on separate thread.
  */
-public abstract class DriveTrain {
+public abstract class DriveTrain extends Driver {
     private void netSpeed() {
 
     }

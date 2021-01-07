@@ -11,13 +11,16 @@ public abstract class Task extends Thread{
 
         super.start();
     }
-
+    public final int getProcessId() {
+        return this.processId;
+    }
     public final void terminate() {
         this.deconstructor();
         this.interrupt();
     }
     protected void deconstructor() {}
 
+
+    private int processId;
     protected Clock clock;
-    protected int processId;
 }

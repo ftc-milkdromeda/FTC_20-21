@@ -14,7 +14,7 @@ public abstract class Task extends Thread{
     public final int getProcessId() {
         return this.processId;
     }
-    public final void terminate() {
+    final void terminate() {
         this.deconstructor();
         this.interrupt();
     }

@@ -1,5 +1,7 @@
 package RobotFunctions.TaskManager;
 
+import Drivers.Controller;
+
 public abstract class JoyStickTask extends KeyTask {
     protected JoyStickTask(Clock clock, Controller controller){
         super(clock, controller);

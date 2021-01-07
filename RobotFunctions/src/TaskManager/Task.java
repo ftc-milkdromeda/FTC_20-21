@@ -1,4 +1,4 @@
-package RobotFunctions.TaskManager;
+package TaskManager;
 
 public abstract class Task extends Thread{
     protected Task(Clock clock) {

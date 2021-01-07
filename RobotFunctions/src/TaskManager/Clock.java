@@ -1,4 +1,4 @@
-package RobotFunctions.TaskManager;
+package TaskManager;
 
 public class Clock extends Thread{
     public Clock(int refreshRate) {

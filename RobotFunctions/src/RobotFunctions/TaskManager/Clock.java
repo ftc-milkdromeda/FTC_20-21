@@ -7,16 +7,20 @@ public class Clock extends Thread{
     }
 
     @Override
+    public void start() {
+        if(!ThreadManager.attachClock(this))
+            return;
+
+        super.start();
+    }
+
+    @Override
     public void run() {
         while(!this.isInterrupted()) {
             long startTime = System.currentTimeMillis();
             while(System.currentTimeMillis() - startTime < 1000 / refreshRate && !this.isInterrupted());
             currentClock++;
         }
-    }
-
-    public void terminate() {
-        this.interrupt();
     }
 
     public int getCurrentState() {
@@ -29,7 +33,7 @@ public class Clock extends Thread{
 
         int endClock = this.currentClock;
         long endTime = System.currentTimeMillis();
-        while(endClock - startClock < 1) {
+        while(endClock - startClock < 10) {
             if(endTime - startTime >= timeoutTimer)
                 return -1;
 
@@ -40,6 +44,12 @@ public class Clock extends Thread{
         return (double)(endClock - startClock) / ((double)(endTime - startTime) / 1000f);
 
     }
+
+    protected final void terminate() {
+        this.destructor();
+        this.interrupt();
+    }
+    protected void destructor() {}
 
     private int refreshRate;
     private int currentClock;

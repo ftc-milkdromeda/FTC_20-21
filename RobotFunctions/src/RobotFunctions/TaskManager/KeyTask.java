@@ -1,5 +1,7 @@
 package RobotFunctions.TaskManager;
 
+import Drivers.Controller;
+
 public abstract class KeyTask extends Task{
     protected KeyTask(Clock clock, Controller controller) {
         super(clock);

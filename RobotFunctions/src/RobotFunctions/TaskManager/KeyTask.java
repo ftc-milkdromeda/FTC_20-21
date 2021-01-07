@@ -9,7 +9,7 @@ public abstract class KeyTask extends Task{
     protected abstract double[] keyMapping();
 
     public abstract static class Toggle extends Thread{
-        public Toggle(Controller controller, Clock clock) {
+        public Toggle(Clock clock, Controller controller) {
             this.controller = controller;
             this.state = false;
             this.clock = clock;
@@ -31,8 +31,8 @@ public abstract class KeyTask extends Task{
             this.interrupt();
         }
 
-        public boolean getToggleState() {
-            return this.state;
+        public double getToggleState() {
+            return this.state ? 1.0 : 0.0;
         }
 
         private Clock clock;

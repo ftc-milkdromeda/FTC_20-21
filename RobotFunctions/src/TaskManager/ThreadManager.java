@@ -11,21 +11,21 @@ public class ThreadManager {
 
         ThreadManager.numOfThreads--;
     }
-    public static void stopClock(Clock clock) {
+    public static void stopClock() {
         if(ThreadManager.clock != null) {
             ThreadManager.clock.terminate();
             ThreadManager.clock = null;
             ThreadManager.numOfThreads--;
         }
     }
-    static int attachProcess(Task thread) {
+    public static int attachProcess(Task thread) {
         ThreadManager.threads.add(thread);
 
         ThreadManager.numOfThreads++;
 
         return ThreadManager.threads.size() - 1;
     }
-    static boolean attachClock(Clock clock) {
+    public static boolean attachClock(Clock clock) {
         if(ThreadManager.clock == null) {
             ThreadManager.clock = clock;
             numOfThreads++;
@@ -36,13 +36,15 @@ public class ThreadManager {
 
     public static void stopAllProcess() {
         for(Task thread : ThreadManager.threads)
-            thread.terminate();
+            if(thread != null)
+                thread.terminate();
 
         if(ThreadManager.clock != null)
             ThreadManager.clock.terminate();
 
         ThreadManager.threads = new ArrayList<Task>();
         ThreadManager.numOfThreads = 0;
+        ThreadManager.clock = null;
     }
 
     public static int numOfProcess() {

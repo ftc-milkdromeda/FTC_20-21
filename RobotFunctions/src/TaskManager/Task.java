@@ -20,7 +20,6 @@ public abstract class Task extends Thread{
     }
     protected void deconstructor() {}
 
-
     private int processId;
     protected Clock clock;
 }

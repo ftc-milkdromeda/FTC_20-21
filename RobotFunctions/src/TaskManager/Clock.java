@@ -7,7 +7,7 @@ public class Clock extends Thread{
     }
 
     @Override
-    public void start() {
+    public synchronized void start() {
         if(!ThreadManager.attachClock(this))
             return;
 

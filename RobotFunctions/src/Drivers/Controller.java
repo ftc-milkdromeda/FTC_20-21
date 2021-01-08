@@ -1,7 +1,7 @@
 package Drivers;
 
 import Drivers.Template.Driver;
-import RobotFunctions.TaskManager.JoyStick;
+import TaskManager.JoyStick;
 
 /**
  * @brief Converts gamepad inputs from FTC controller to RobotFunctions' controller.
@@ -23,4 +23,5 @@ public abstract class Controller extends Driver {
     public abstract JoyStick get_RightStick();
     public abstract double get_LeftTrigger();
     public abstract double get_RightTrigger();
+    public abstract double get_Back();
 }

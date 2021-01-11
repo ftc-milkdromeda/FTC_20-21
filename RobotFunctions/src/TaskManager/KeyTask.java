@@ -25,12 +25,14 @@ public abstract class KeyTask extends Task{
                 while (!super.isInterrupted() && !this.testKey());
 
                 this.state = this.state ? false : true;
-
                 while (!super.isInterrupted() && this.testKey());
             }
         }
         public void terminate() {
             this.interrupt();
+        }
+        public void setState(boolean state) {
+            this.state = state;
         }
 
         public double getToggleState() {

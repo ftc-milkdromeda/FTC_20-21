@@ -25,15 +25,15 @@ class PID {
 
     //public boolean readPID(String name) {}
     //public boolean writePID(String name, boolean override) {}
-    public void initNew(Vector3D PIDValues) {
+    public void initNew() {
         double array[] = { 1, 1, 1 };
         PIDValues = new Vector3D(array);
     }
-    public void setPID(Vector3D PIDValues) {
-        this.PIDValues = PIDValues;
+    public void setPID(double PIDValues[]) {
+        this.PIDValues = new Vector3D(PIDValues) ;
     }
-    public Vector3D getPIDValues() {
-        return this.PIDValues;
+    public double[] getPIDValues() {
+        return this.PIDValues.toArray();
     }
 
     public double runPID(double error[], double interval) {

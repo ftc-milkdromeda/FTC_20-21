@@ -7,9 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MotorCalibration/PID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/RobotFunctions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/RobotFunctions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/JoyStick.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/JoyStick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/KeyMappings.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/KeyMappings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="2020.11-task" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,14 +57,18 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/commons-math3-3.6.1.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.19425288" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="RobotFunctions" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="RobotFunctions" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -98,8 +104,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +271,168 @@
       <option name="project" value="LOCAL" />
       <updated>1607581035698</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Made Toggle compliant with convention.">
+      <created>1609990132472</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1609990132472</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Added way to manage threads.">
+      <created>1610033778939</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1610033778939</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Updated clock to work with ThreadManager.">
+      <created>1610038643441</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1610038643441</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Updated drivers.">
+      <created>1610038850990</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1610038850990</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Updated files to work with new package.">
+      <created>1610039091921</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1610039091921</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Added new class to manage threads.">
+      <created>1610039114617</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1610039114617</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Moved and changed to abstract class.">
+      <created>1610039654413</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1610039654413</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Updated DriveTrain.">
+      <created>1610049415276</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1610049415276</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added getter for processId.">
+      <created>1610049669503</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1610049669503</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Changed import for updated path.">
+      <created>1610049703150</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1610049703150</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Changed import for updated path.">
+      <created>1610049716012</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1610049716012</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Updated encapsulation for terminate.">
+      <created>1610049775446</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1610049775446</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Moved task manager.">
+      <created>1610050236797</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1610050236797</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Reformatted code.">
+      <created>1610050401146</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1610050401146</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Updated start function.">
+      <created>1610086156021</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1610086156021</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Added new function to deal with back button.">
+      <created>1610086175904</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1610086175904</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Reformatted code.">
+      <created>1610086191859</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1610086191859</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Updated access modifiers.">
+      <created>1610086207834</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1610086207834</updated>
+    </task>
+    <task id="LOCAL-00040" summary="General project updates.">
+      <created>1610086223856</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1610086223856</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Changed driver class so that only one thread can use at a time.">
+      <created>1610335196746</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1610335196747</updated>
+    </task>
+    <task id="LOCAL-00042" summary="New static class added to manage all drivers.">
+      <created>1610335215094</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1610335215094</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Added new line to manually set the state of the button.">
+      <created>1610335239788</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1610335239788</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Submodule updates.">
+      <created>1610335253910</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1610335253910</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,35 +441,71 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="v2020.11" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="v2020.11" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="2020.11-task" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created Intilij Project" />
-    <MESSAGE value="Added new Android Studio package" />
-    <MESSAGE value="Added new ignore file" />
-    <MESSAGE value="Added new project files" />
-    <MESSAGE value="Added New folders and files" />
-    <MESSAGE value="Java Files" />
-    <MESSAGE value="Committing project files" />
-    <MESSAGE value="Made project structure changes" />
-    <MESSAGE value="Finished the RoughMecanumWheels class; tested on computer; ready for real world testing" />
-    <MESSAGE value="Debuged RoughMecanumWheels; Began PrecisionMecanumWheels; Finished Odometry class interface; need to add Odometry logic for calculating displacement." />
-    <MESSAGE value="RobotFunctions v0.1" />
-    <MESSAGE value="Made some documentation changes; Changed return variable in DriveOperation." />
-    <MESSAGE value="Reorganized some things around in the project." />
-    <MESSAGE value="Added a way to index gamepads." />
-    <MESSAGE value="Added driver to convert gamepad from FTC to inputs for RobotFunctions" />
-    <MESSAGE value="Added new files for potential new functions" />
     <MESSAGE value="Added new CourseCorrection class" />
     <MESSAGE value="Changes to project files." />
     <MESSAGE value="Fixed merge issues" />
     <MESSAGE value="Added class to deal with joystick inputs; still need to work on polar conversions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added class to deal with joystick inputs; still need to work on polar conversions." />
+    <MESSAGE value="Made Toggle compliant with convention." />
+    <MESSAGE value="Added way to manage threads." />
+    <MESSAGE value="Updated clock to work with ThreadManager." />
+    <MESSAGE value="Updated drivers." />
+    <MESSAGE value="Updated files to work with new package." />
+    <MESSAGE value="Added new class to manage threads." />
+    <MESSAGE value="Moved and changed to abstract class." />
+    <MESSAGE value="Updated DriveTrain." />
+    <MESSAGE value="Added getter for processId." />
+    <MESSAGE value="Changed import for updated path." />
+    <MESSAGE value="Updated encapsulation for terminate." />
+    <MESSAGE value="Moved task manager." />
+    <MESSAGE value="Updated start function." />
+    <MESSAGE value="Added new function to deal with back button." />
+    <MESSAGE value="Reformatted code." />
+    <MESSAGE value="Updated access modifiers." />
+    <MESSAGE value="General project updates." />
+    <MESSAGE value="Changed driver class so that only one thread can use at a time." />
+    <MESSAGE value="New static class added to manage all drivers." />
+    <MESSAGE value="Added new line to manually set the state of the button." />
+    <MESSAGE value="Submodule updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="Submodule updates." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
@@ -310,18 +516,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602135584837" />
-    <state x="599" y="213" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1601570417083">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1610034598176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="599" y="213" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601570417083" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1602392797285">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610034598176" />
+    <state x="690" y="296" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1610050147333">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1602392797285" />
-    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1601563529647">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="689" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601563529647" />
+    <state x="690" y="296" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610050147333" />
     <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1605654538493">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -330,22 +532,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="389" width="424" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1602084122161" />
+    <state x="756" y="400" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1610050148288">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="400" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040@0.0.1920.1040" timestamp="1610050148288" />
+    <state x="539" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610038809142">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="539" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610038809142" />
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605994663277">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
-    <state x="519" y="83" key="CommitChangelistDialog2" timestamp="1607623549829">
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2" timestamp="1610596961433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="519" y="83" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1607623549829" />
-    <state x="714" y="238" key="DetectedRootsChooserDialog" timestamp="1601564373133">
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1610596961433" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1610117110116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="714" y="238" key="DetectedRootsChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601564373133" />
-    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1604952540821">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610117110116" />
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1610555238540">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604952540821" />
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610555238540" />
     <state width="1877" height="390" key="GridCell.Tab.0.bottom" timestamp="1602219952199">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -378,54 +588,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="390" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state x="627" y="224" key="NewModule_or_Project.wizard" timestamp="1601566069501">
+    <state x="440" y="97" key="SettingsEditor" timestamp="1610555243711">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="627" y="224" key="NewModule_or_Project.wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1601566069501" />
-    <state x="440" y="97" key="SettingsEditor" timestamp="1605971525127">
+    <state x="440" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610555243711" />
+    <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1610117110116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1605971525127" />
-    <state x="807" y="441" key="VCS.ChangelistChooser" timestamp="1601569981637">
+    <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610117110116" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1610117116593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="807" y="441" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1601569981637" />
-    <state x="790" y="392" key="VCS.EditChangelistDialog" timestamp="1601782471420">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="790" y="392" key="VCS.EditChangelistDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601782471420" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1605973486009">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1605973486009" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610117116593" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605916110183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605916110183" />
-    <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1601569253874">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="665" y="421" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1601569253874" />
     <state x="766" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605475438843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="766" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605475438843" />
-    <state x="731" y="240" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1601565794743">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="731" y="240" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1601565794743" />
     <state x="532" y="259" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602219945306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="532" y="259" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1602219945306" />
-    <state x="92" y="92" width="1736" height="856" key="dock-window-1" timestamp="1601866268097">
+    <state x="741" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610049392346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1601866268097" />
-    <state x="342" y="146" key="new project wizard" timestamp="1601565937543">
+    <state x="741" y="233" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610049392346" />
+    <state x="342" y="146" key="new project wizard" timestamp="1610050172561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="342" y="146" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1601565937543" />
+    <state x="342" y="146" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1610050172561" />
     <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1602095844005">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

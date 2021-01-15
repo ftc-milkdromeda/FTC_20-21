@@ -58,25 +58,23 @@ public class PID {
         File file = new File(name);
 
         try {
-            file.createNewFile();
-        }
-        catch (IOException e) {
-            if(override) {
-                file.delete();
-                try {
+            if(!file.createNewFile()) {
+                if (override) {
+                    file.delete();
                     file.createNewFile();
                 }
-                catch (IOException f) {
+                else
                     return false;
-                }
             }
-            else
-                return false;
+        }
+        catch (IOException e) {
+            return false;
         }
 
         try {
             FileWriter output = new FileWriter(name);
-            output.write("" + PIDValues.toArray()[0] + PIDValues.toArray()[1] + PIDValues.toArray()[2]);
+            output.write("" + PIDValues.toArray()[0] + " "  + PIDValues.toArray()[1] +  " " + PIDValues.toArray()[2]);
+            output.close();
         }
         catch (IOException e) {
             return false;

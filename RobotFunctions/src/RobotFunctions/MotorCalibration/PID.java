@@ -1,11 +1,13 @@
 package RobotFunctions.MotorCalibration;
 
-import org.apache.commons.math3.geometry.Space;
 import org.apache.commons.math3.geometry.Vector;
 import org.apache.commons.math3.geometry.euclidean.threed.Euclidean3D;
 import org.apache.commons.math3.geometry.euclidean.threed.Vector3D;
 
-class PID {
+import java.io.*;
+import java.util.Scanner;
+
+public class PID {
     public PID() {}
 
     private double integrate(double error[], double interval) {
@@ -23,8 +25,65 @@ class PID {
         return velocity / fraction;
     }
 
-    //public boolean readPID(String name) {}
-    //public boolean writePID(String name, boolean override) {}
+    public boolean readPID(String name) {
+        name = name + ".pid";
+
+        File file = new File(name);
+        Scanner input;
+
+        try {
+            input = new Scanner(file);
+        }
+        catch (FileNotFoundException e) {
+            return false;
+        }
+
+        double value[] = new double[3];
+
+        try {
+            for (int a = 0; a < value.length; a++)
+                value[a] = input.nextDouble();
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
+            return false;
+        }
+
+        this.PIDValues = new Vector3D(value);
+
+        return true;
+    }
+    public boolean writePID(String name, boolean override) {
+        name = name + ".pid";
+
+        File file = new File(name);
+
+        try {
+            file.createNewFile();
+        }
+        catch (IOException e) {
+            if(override) {
+                file.delete();
+                try {
+                    file.createNewFile();
+                }
+                catch (IOException f) {
+                    return false;
+                }
+            }
+            else
+                return false;
+        }
+
+        try {
+            FileWriter output = new FileWriter(name);
+            output.write("" + PIDValues.toArray()[0] + PIDValues.toArray()[1] + PIDValues.toArray()[2]);
+        }
+        catch (IOException e) {
+            return false;
+        }
+
+        return true;
+    }
     public void initNew() {
         double array[] = { 1, 1, 1 };
         PIDValues = new Vector3D(array);
@@ -66,8 +125,8 @@ class PID {
 
         return new Vector3D(gradient);
     }
-    public void applyGradient(Vector3D gradient) {
-        this.PIDValues.subtract((Vector<Euclidean3D>)gradient);
+    public void applyGradient(Vector3D gradient, double rate) {
+        this.PIDValues.subtract(rate, (Vector<Euclidean3D>)gradient);
     }
 
     private Vector3D PIDValues;

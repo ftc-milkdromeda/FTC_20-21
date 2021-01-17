@@ -6,29 +6,44 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Added bitmap library to help with bitmap io.">
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/AbstractRgb888Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BmpImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BmpReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BmpWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BufferedPalettedRgb888Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BufferedRgb888Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/LittleEndianDataInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/LittleEndianDataOutput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/Rgb888Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/Drivers/RobotCamera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/Image/Image.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Tasks/Auto/StackHeightTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Moved everything into a Milkdromda package.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/Drivers/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/Drivers/DriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/DriveTrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/Drivers/DriverManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/DriverManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/Drivers/RobotCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/RobotCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/Drivers/Template/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/Template/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/Image/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Image/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Error.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MecanumWheels/CourseCorrection.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/CourseCorrection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MecanumWheels/DriveOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/DriveOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MecanumWheels/MecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MecanumWheels/Motor.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/Motor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MecanumWheels/PrecisionMecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/PrecisionMecanumWheels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MecanumWheels/Procedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/Procedure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MecanumWheels/RoughMecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/RoughMecanumWheels.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/MotorCalibration/PID.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MotorCalibration/PID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Odometry/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Odometry/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Odometry/Odometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Odometry/Odometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Odometry/OdometryState.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Odometry/OdometryState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Odometry/RobotState.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Odometry/RobotState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Odometry/VectorPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Odometry/VectorPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Units_length.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Units_length.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/RobotFunctions/Units_time.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Units_time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/TaskManager/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/TaskManager/Clock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/TaskManager/JoyStick.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/TaskManager/JoyStick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/TaskManager/JoyStickTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/TaskManager/JoyStickTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/TaskManager/KeyTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/TaskManager/KeyTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/TaskManager/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/TaskManager/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromda/TaskManager/ThreadManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/TaskManager/ThreadManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/Arm.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/Arm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Drivers/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/EstablishedOpMode/RemoteAuto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/EstablishedOpMode/RemoteAuto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/TestCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/TestCamera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Tasks/Auto/RingTaskCoordinator.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Tasks/Auto/RingTaskCoordinator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Tasks/Auto/StackHeightTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Tasks/Auto/StackHeightTask.java" afterDir="false" />
     </list>
     <list id="52787635-9393-4ffb-8649-f407dbaf863a" name="Added bitmap library to help with bitmap io." comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,27 +160,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601413090396</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added New folders and files">
-      <created>1601782453373</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1601782453373</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Java Files">
-      <created>1601865861075</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1601865861075</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Committing project files">
-      <created>1601865902627</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1601865902627</updated>
     </task>
     <task id="LOCAL-00007" summary="Made project structure changes">
       <created>1601868484795</created>
@@ -489,7 +483,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610860404094</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added bitmap library to help with bitmap io.">
+      <created>1610863848026</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1610863848026</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Added new image library.">
+      <created>1610863877458</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1610863877458</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Added bitmap library to help with bitmap io.">
+      <created>1610863901183</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1610863901183</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -538,7 +553,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated files to work with new package." />
     <MESSAGE value="Added new class to manage threads." />
     <MESSAGE value="Moved and changed to abstract class." />
     <MESSAGE value="Updated DriveTrain." />
@@ -562,8 +576,9 @@
     <MESSAGE value="Removed dependence on math library." />
     <MESSAGE value="Added file io." />
     <MESSAGE value="Fixed bugs." />
-    <MESSAGE value="Added bitmap library to help with bitmap io." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added bitmap library to help with bitmap io." />
+    <MESSAGE value="Added new image library." />
+    <MESSAGE value="Moved everything into a Milkdromda package." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved everything into a Milkdromda package." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
@@ -598,10 +613,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
-    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2" timestamp="1610863846287">
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2" timestamp="1610863899978">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1610863846287" />
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1610863899978" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1610117110116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -610,10 +625,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610555238540" />
-    <state x="800" y="421" key="GitRewordDialog" timestamp="1610860443392">
+    <state x="800" y="421" key="GitRewordDialog" timestamp="1610863936216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="800" y="421" key="GitRewordDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610860443392" />
+    <state x="800" y="421" key="GitRewordDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610863936216" />
     <state width="1877" height="172" key="GridCell.Tab.0.bottom" timestamp="1610726721434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -642,10 +657,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="436" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610860822616" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1610726745269">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1610863955318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610726745269" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610863955318" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605916110183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -681,7 +696,7 @@
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/GamePad/KeyMappings.java</url>
+          <url>file://$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/GamePad/KeyMappings.java</url>
           <line>35</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>

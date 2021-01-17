@@ -1,20 +1,19 @@
 package Milkdromeda.Image;
 
-import io.nayuki.bmpio.AbstractRgb888Image;
-import io.nayuki.bmpio.BmpImage;
-import io.nayuki.bmpio.BmpWriter;
+import io.nayuki.bmpio.*;
+import io.nayuki.bmpio.Rgb888Image;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class Image {
-    public Image(int width, int height, boolean grayscale) {
+public class Bitmap {
+    public Bitmap(int width, int height) {
         this.width = width;
         this.height = height;
-        this.grayscale = grayscale;
     }
 
-    public boolean setPixels(double[] pixels) {
+    public boolean setPixels(double[] pixels, boolean grayscale) {
         if(grayscale && pixels.length != this.width * this.height)
             return false;
         if(!grayscale && pixels.length != this.width * this.height * 3)
@@ -24,9 +23,11 @@ public class Image {
         for(int a = 0; a < pixels.length; a++)
             this.pixels[a] = pixels[a];
 
+        this.grayscale = grayscale;
+
         return true;
     }
-    public boolean setPixels(int[] pixels) {
+    public boolean setPixels(int[] pixels, boolean grayscale) {
         if(grayscale && pixels.length != this.width * this.height)
             return false;
         if(!grayscale && pixels.length != this.width * this.height * 3)
@@ -35,6 +36,8 @@ public class Image {
         this.pixels = new double[pixels.length];
         for(int a = 0; a < pixels.length; a++)
             this.pixels[a] = pixels[a] / 256f;
+
+        this.grayscale = grayscale;
 
         return true;
     }
@@ -57,8 +60,8 @@ public class Image {
             return;
 
         double pixels[] = new double[this.width * this.height];
-        for(int a = 0; a < pixels.length; a++)
-            pixels[a] = (this.pixels[a * 3] + this.pixels[a * 3 + 1] + this.pixels[a * 3 * 2]) / 3;
+        for(int a = 0; a < pixels.length; a+=3)
+            pixels[a] = (this.pixels[a] + this.pixels[a + 1] + this.pixels[a + 2]) / 3;
 
         this.grayscale = true;
         this.pixels = pixels;
@@ -87,21 +90,20 @@ public class Image {
         bmp.image = new AbstractRgb888Image(this.width, this.height) {
             @Override
             public int getRgb888Pixel(int x, int y) {
-                if(Image.this.grayscale) {
-                    byte luminance = (byte) (Image.this.pixels[x * this.height + y] * 256);
-                    return luminance * 0x1 + luminance * 0x100 + luminance * 0x10000;
+                if(Bitmap.this.grayscale) {
+                    byte luminance = (byte) (Bitmap.this.pixels[x * this.height + y] * 256);
+                    return luminance << 0 | luminance << 8 | luminance << 16;
                 }
                 else {
-                    byte r = (byte) (Image.this.pixels[(x * this.height + y) * 3 + 0] * 256);
-                    byte g = (byte) (Image.this.pixels[(x * this.height + y) * 3 + 1] * 256);
-                    byte b = (byte) (Image.this.pixels[(x * this.height + y) * 3 + 2] * 256);
-                    return r * 0x1 + g * 0x100 + b * 0x10000;
+                    int r = (int) (Bitmap.this.pixels[(x * this.height + y) * 3 + 0] * 256);
+                    int g = (int) (Bitmap.this.pixels[(x * this.height + y) * 3 + 1] * 256);
+                    int b = (int) (Bitmap.this.pixels[(x * this.height + y) * 3 + 2] * 256);
+                    return b << 0| g << 8 | r << 16;
                 }
 
             }
-
-            double pixels[];
         };
+
         try {
             FileOutputStream out = new FileOutputStream(name + ".bmp");
             BmpWriter.write(out, bmp);
@@ -115,6 +117,30 @@ public class Image {
         return true;
     }
     public boolean readImage(String name) {
+        BmpImage image;
+        try {
+            FileInputStream input = new FileInputStream(name + ".bmp");
+            image = BmpReader.read(input);
+            input.close();
+        }
+        catch (IOException e) {
+            return false;
+        }
+
+        this.pixels = new double[3 * image.image.getWidth() * image.image.getHeight()];
+
+        for(int x = 0; x < image.image.getWidth(); x++) {
+            for(int y = 0; y < image.image.getHeight(); y++) {
+                this.pixels[(x * image.image.getHeight() + y) * 3 + 0] = ((0x00ff0000 & image.image.getRgb888Pixel(x, y)) >> 16)  / 256f;
+                this.pixels[(x * image.image.getHeight() + y) * 3 + 1] = ((0x0000ff00 & image.image.getRgb888Pixel(x, y)) >>  8) / 256f;
+                this.pixels[(x * image.image.getHeight() + y) * 3 + 2] = ((0x000000ff & image.image.getRgb888Pixel(x, y)) >>  0) / 256f;
+            }
+        }
+
+        this.grayscale = false;
+        this.height = image.image.getHeight();
+        this.width = image.image.getWidth();
+
         return false;
     }
 

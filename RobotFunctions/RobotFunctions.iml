@@ -23,6 +23,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="BmpIO" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>

@@ -6,13 +6,31 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/RobotFunctions/MotorCalibration/PID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/RobotFunctions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/RobotFunctions.xml" afterDir="false" />
+    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Added bitmap library to help with bitmap io.">
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/AbstractRgb888Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BmpImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BmpReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BmpWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BufferedPalettedRgb888Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/BufferedRgb888Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/LittleEndianDataInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/LittleEndianDataOutput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BmpIO/src/io/nayuki/bmpio/Rgb888Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/Drivers/RobotCamera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RobotFunctions/src/Image/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/Tasks/Auto/StackHeightTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Test.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/src/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/FtcRobotController/src/main/java/org/firstinspires/ftc/robotcontroller/external/samples/ConceptVuMarkIdentificationWebcam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/TestCamera.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal/TeamCode/src/main/java/org/firstinspires/ftc/teamcode/OpModes/TestOpModes/TestCamera.java" afterDir="false" />
     </list>
+    <list id="52787635-9393-4ffb-8649-f407dbaf863a" name="Added bitmap library to help with bitmap io." comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,12 +56,15 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1iCYYmH3rExaO4okMjmFwCzbHG2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -104,8 +125,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Java Scratch.Scratch" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Test" />
@@ -119,31 +140,11 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="" />
+      <changelist id="52787635-9393-4ffb-8649-f407dbaf863a" name="Added bitmap library to help with bitmap io." comment="" />
       <created>1601413090396</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601413090396</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Created Intilij Project">
-      <created>1601413298037</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1601413298038</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added new Android Studio package">
-      <created>1601431254198</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1601431254198</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added new ignore file">
-      <created>1601569003690</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1601569003690</updated>
     </task>
     <task id="LOCAL-00004" summary="Added New folders and files">
       <created>1601782453373</created>
@@ -432,7 +433,63 @@
       <option name="project" value="LOCAL" />
       <updated>1610335253910</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Added way to make PID calculations and to train the PID.">
+      <created>1610596948667</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1610596948667</updated>
+    </task>
+    <task id="LOCAL-00046" summary="Added new library.">
+      <created>1610596973219</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1610596973219</updated>
+    </task>
+    <task id="LOCAL-00047" summary="Updated submodule.">
+      <created>1610596983007</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1610596983007</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Updated gitignore.">
+      <created>1610597010644</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1610597010644</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Removed dependence on math library.">
+      <created>1610597347037</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1610597347037</updated>
+    </task>
+    <task id="LOCAL-00050" summary="Added file io.">
+      <created>1610723178811</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1610723178811</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Fixed bugs.">
+      <created>1610726735120</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1610726735120</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Removed dependance on math library">
+      <created>1610860404093</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1610860404094</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -480,14 +537,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added new CourseCorrection class" />
-    <MESSAGE value="Changes to project files." />
-    <MESSAGE value="Fixed merge issues" />
-    <MESSAGE value="Added class to deal with joystick inputs; still need to work on polar conversions." />
-    <MESSAGE value="Made Toggle compliant with convention." />
-    <MESSAGE value="Added way to manage threads." />
-    <MESSAGE value="Updated clock to work with ThreadManager." />
-    <MESSAGE value="Updated drivers." />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Updated files to work with new package." />
     <MESSAGE value="Added new class to manage threads." />
     <MESSAGE value="Moved and changed to abstract class." />
@@ -505,17 +555,25 @@
     <MESSAGE value="New static class added to manage all drivers." />
     <MESSAGE value="Added new line to manually set the state of the button." />
     <MESSAGE value="Submodule updates." />
-    <option name="LAST_COMMIT_MESSAGE" value="Submodule updates." />
+    <MESSAGE value="Added way to make PID calculations and to train the PID." />
+    <MESSAGE value="Added new library." />
+    <MESSAGE value="Updated submodule." />
+    <MESSAGE value="Updated gitignore." />
+    <MESSAGE value="Removed dependence on math library." />
+    <MESSAGE value="Added file io." />
+    <MESSAGE value="Fixed bugs." />
+    <MESSAGE value="Added bitmap library to help with bitmap io." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added bitmap library to help with bitmap io." />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1604952585037" />
-    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602135584837">
+    <state x="725" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610723231617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1602135584837" />
+    <state x="725" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610723231617" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1610034598176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -524,14 +582,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="296" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610050147333" />
-    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1605654538493">
+    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1610863802657">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605654538493" />
-    <state x="748" y="389" width="424" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1602084122161">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="748" y="389" width="424" height="266" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1602084122161" />
+    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610863802657" />
     <state x="756" y="400" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1610050148288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -544,10 +598,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
-    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2" timestamp="1610596961433">
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2" timestamp="1610863846287">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1610596961433" />
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1610863846287" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1610117110116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -556,50 +610,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610555238540" />
-    <state width="1877" height="390" key="GridCell.Tab.0.bottom" timestamp="1602219952199">
+    <state x="800" y="421" key="GitRewordDialog" timestamp="1610860443392">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state width="1877" height="390" key="GridCell.Tab.0.center" timestamp="1602219952199">
+    <state x="800" y="421" key="GitRewordDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610860443392" />
+    <state width="1877" height="172" key="GridCell.Tab.0.bottom" timestamp="1610726721434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state width="1877" height="390" key="GridCell.Tab.0.left" timestamp="1602219952199">
+    <state width="1877" height="172" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610726721434" />
+    <state width="1877" height="172" key="GridCell.Tab.0.center" timestamp="1610726721434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state width="1877" height="390" key="GridCell.Tab.0.right" timestamp="1602219952199">
+    <state width="1877" height="172" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610726721434" />
+    <state width="1877" height="172" key="GridCell.Tab.0.left" timestamp="1610726721434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state width="1877" height="390" key="GridCell.Tab.1.bottom" timestamp="1602219952199">
+    <state width="1877" height="172" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610726721434" />
+    <state width="1877" height="172" key="GridCell.Tab.0.right" timestamp="1610726721434">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state width="1877" height="390" key="GridCell.Tab.1.center" timestamp="1602219952199">
+    <state width="1877" height="172" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610726721434" />
+    <state x="404" y="93" key="SettingsEditor" timestamp="1610861010422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="390" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state width="1877" height="390" key="GridCell.Tab.1.left" timestamp="1602219952199">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="390" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state width="1877" height="390" key="GridCell.Tab.1.right" timestamp="1602219952199">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="390" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1602219952199" />
-    <state x="440" y="97" key="SettingsEditor" timestamp="1610555243711">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="440" y="97" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610555243711" />
+    <state x="404" y="93" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1610861010422" />
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog" timestamp="1610117110116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="ShowDiffWithBranchDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610117110116" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1610117116593">
+    <state x="807" y="436" key="VCS.ChangelistChooser" timestamp="1610860822616">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610117116593" />
+    <state x="807" y="436" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610860822616" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1610726745269">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610726745269" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605916110183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -608,22 +654,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="766" y="202" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1605475438843" />
-    <state x="532" y="259" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1602219945306">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="532" y="259" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1602219945306" />
     <state x="741" y="233" key="git4idea.branch.GitSmartOperationDialog" timestamp="1610049392346">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="741" y="233" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610049392346" />
-    <state x="342" y="146" key="new project wizard" timestamp="1610050172561">
+    <state x="342" y="146" key="new project wizard" timestamp="1610860936074">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="342" y="146" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1610050172561" />
-    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1602095844005">
+    <state x="342" y="146" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1610860936074" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1610862295631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="229" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602095844005" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610862295631" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

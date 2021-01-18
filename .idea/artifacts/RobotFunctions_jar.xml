@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions</output-path>
     <root id="archive" name="RobotFunctions.jar">
       <element id="module-output" name="RobotFunctions" />
+      <element id="module-output" name="BmpIO" />
     </root>
   </artifact>
 </component>

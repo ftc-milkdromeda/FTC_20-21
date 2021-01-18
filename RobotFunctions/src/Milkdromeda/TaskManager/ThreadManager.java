@@ -6,6 +6,9 @@ public class ThreadManager {
     private ThreadManager() {}
 
     public static void stopProcess(int index) {
+        if(ThreadManager.threads.get(index) == null)
+            return;
+
         ThreadManager.threads.get(index).terminate();
         ThreadManager.threads.set(index, null);
 

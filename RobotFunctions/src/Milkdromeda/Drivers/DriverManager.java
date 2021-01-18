@@ -9,6 +9,8 @@ public class DriverManager {
     private DriverManager() {}
 
     public static void stopProcess(int index) {
+        if(DriverManager.drivers.get(index) == null)
+            return;
         DriverManager.drivers.get(index).terminate();
         DriverManager.drivers.set(index, null);
 

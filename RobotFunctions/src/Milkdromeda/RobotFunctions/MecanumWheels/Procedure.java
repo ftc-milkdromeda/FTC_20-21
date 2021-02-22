@@ -1,4 +1,4 @@
-package RobotFunctions.MecanumWheels;
+package Milkdromeda.RobotFunctions.MecanumWheels;
 
 public class Procedure{
     public Procedure(double angle, double magnitude, double pivot) {}

@@ -1,14 +1,13 @@
 package Milkdromeda.RobotFunctions.MecanumWheels;
 
-import RobotFunctions.Error;
-import RobotFunctions.Units_length;
-import RobotFunctions.Units_time;
-import org.jetbrains.annotations.NotNull;
+import Milkdromeda.RobotFunctions.Error;
+import Milkdromeda.RobotFunctions.Units_length;
+import Milkdromeda.RobotFunctions.Units_time;
+import Milkdromeda.Drivers.DriveTrain;
+
+import com.sun.istack.internal.NotNull;
 
 public class MecanumWheels {
-    private MotorSetting normalizePower(MotorSetting settings) {
-        //todo add and test formula for normalizing motor power.
-    }
     private double getPivotDistance(double pivot) {
         double a = 2.5;
         if(pivot == 0)
@@ -16,10 +15,9 @@ public class MecanumWheels {
         return a * 1 / pivot + a * Math.signum(pivot);
     }
 
-    MecanumWheels(Drive driveConfig) {
+    MecanumWheels(DriveTrain driveConfig) {
         this.bound = BoundType.NONE;
         this.boundValue = -1;
-        this.normalized = false;
         this.settings = new MotorSetting();
         this.isPathUpdated = false;
         this.instanceRunning = false;
@@ -34,7 +32,6 @@ public class MecanumWheels {
     MecanumWheels(@NotNull MecanumWheels object) {
         this.bound = object.bound;
         this.boundValue = object.boundValue;
-        this.normalized = object.normalized;
         this.settings = new MotorSetting();
         this.isPathUpdated = false;
         this.driveConfig = object.driveConfig;
@@ -61,14 +58,6 @@ public class MecanumWheels {
         double F_0 = Math.sin(procedure.getAngle() + Math.PI / 4);
         double F_1 = Math.sin(procedure.getAngle() - Math.PI / 4);
     }
-    public void setNormalized(boolean normalized) {
-        if(this.normalized == normalized)
-            return;
-        this.normalized = normalized;
-        this.isPathUpdated = false;
-
-        this.setError(Error.NO_ERROR);
-    }
     public void setDistanceBounds(double distance, @NotNull Units_length units) {
         this.bound = BoundType.DISTANCE;
         this.boundValue = distance * units.getValue();
@@ -91,11 +80,6 @@ public class MecanumWheels {
         this.setError(Error.NO_ERROR);
 
         return this.bound;
-    }
-    public boolean getNormalized() {
-        this.setError(Error.NO_ERROR);
-
-        return this.normalized;
     }
 
     //todo fill in getRunTime
@@ -211,10 +195,9 @@ public class MecanumWheels {
 
     private BoundType bound;
     private double boundValue;
-    private boolean normalized;
     private MecanumWheels.MotorSetting settings;
     private boolean isPathUpdated;
-    private Drive driveConfig;
+    private DriveTrain driveConfig;
     private long startTime;
     private long endTime;
     private Procedure currentProcedure;

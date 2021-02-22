@@ -6,15 +6,15 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d7d9037-91be-4f17-825b-6ee07e4423ca" name="Default Changelist" comment="Added new">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/RobotFunctions_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/RobotFunctions_jar.xml" afterDir="false" />
+    <list default="true" id="8781e714-687f-4219-a0f2-422072f36977" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/RobotFunctions.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Image/Bitmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Image/Bitmap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/DriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/DriveTrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/Drivers/Operation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/Error.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/Drive.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/MecanumWheels.java" beforeDir="false" afterPath="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels/MecanumWheels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ultimate-Goal" beforeDir="false" afterPath="$PROJECT_DIR$/Ultimate-Goal" afterDir="false" />
     </list>
-    <list id="52787635-9393-4ffb-8649-f407dbaf863a" name="Added bitmap library to help with bitmap io." comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +62,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="jdk.selected.JAVA_MODULE" value="14" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ultimate-Goal/TeamCode/lib/RobotFunctions/RobotFunctions.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RobotFunctions/src/Milkdromeda/RobotFunctions/MecanumWheels" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15429688" />
     <property name="project.structure.side.proportion" value="0.19425288" />
@@ -76,8 +76,14 @@
       <recent name="" />
       <recent name="RobotFunctions" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Milkdromeda.RobotFunctions" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\Dev\FTC\FTC_20-21\RobotFunctions\src\Milkdromeda\RobotFunctions\MecanumWheels" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Test">
@@ -130,13 +136,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601413090396</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Debuged RoughMecanumWheels; Began PrecisionMecanumWheels; Finished Odometry class interface; need to add Odometry logic for calculating displacement.">
-      <created>1602959720625</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1602959720625</updated>
     </task>
     <task id="LOCAL-00012" summary="RobotFunctions v0.1">
       <created>1604942480973</created>
@@ -474,7 +473,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610920851599</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Replaced old files with new files.">
+      <created>1614025797505</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1614025797505</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -523,7 +529,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Updated encapsulation for terminate." />
     <MESSAGE value="Moved task manager." />
     <MESSAGE value="Updated start function." />
     <MESSAGE value="Added new function to deal with back button." />
@@ -548,13 +553,10 @@
     <MESSAGE value="Fixed Bitmap bugs." />
     <MESSAGE value="Updated driver to return a bitmap." />
     <MESSAGE value="Added new module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new module." />
+    <MESSAGE value="Replaced old files with new files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Replaced old files with new files." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="181" key="#Project_Structure" timestamp="1604952585037">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="552" y="181" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1604952585037" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610868469908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -571,10 +573,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="296" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610050147333" />
-    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1610863802657">
+    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1614025699527">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610863802657" />
+    <state x="651" y="449" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614025699527" />
     <state x="756" y="400" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1610050148288">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -583,10 +585,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="539" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610038809142" />
-    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605994663277">
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614026175063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605994663277" />
+    <state x="690" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614026175063" />
     <state x="861" y="273" key="#xdebugger.XInspectDialog" timestamp="1610871109825">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -595,10 +597,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1065" y="241" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1610871212553" />
-    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2" timestamp="1611010321324">
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2" timestamp="1614025796537">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1611010321324" />
+    <state x="648" y="84" width="691" height="789" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1614025796537" />
     <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1610117110116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -643,6 +645,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="417" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610997901403" />
+    <state x="184" y="86" key="MergeDialog" timestamp="1614025554689">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="184" y="86" key="MergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614025554689" />
+    <state x="672" y="236" key="MultipleFileMergeDialog" timestamp="1614025835977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="672" y="236" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614025835977" />
     <state x="404" y="93" key="SettingsEditor" timestamp="1610923963381">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -655,10 +665,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="807" y="436" key="VCS.ChangelistChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610860822616" />
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1610863955318">
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2" timestamp="1614025845141">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610863955318" />
+    <state x="552" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1614025845141" />
     <state x="668" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1605916110183">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

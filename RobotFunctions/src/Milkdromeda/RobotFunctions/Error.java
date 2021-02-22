@@ -1,4 +1,4 @@
-package RobotFunctions;
+package Milkdromeda.RobotFunctions;
 
 public enum Error {
     //errors for MecanumWheels.MecanumWheels

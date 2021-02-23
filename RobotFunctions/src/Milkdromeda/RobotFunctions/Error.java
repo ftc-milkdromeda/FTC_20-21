@@ -5,6 +5,7 @@ public enum Error {
     MW_PROCESS_ALREADY_RUNNING(001),
     MW_NO_PROCESS_RUNNING(002),
     MW_NO_PROCEDURE_SET(003),
+    MW_NO_BOUND_SET(004),
 
     //errors for MecanumWheels.Operation
     O_EXECUTION_STOPPED_FORCEFULLY(101),

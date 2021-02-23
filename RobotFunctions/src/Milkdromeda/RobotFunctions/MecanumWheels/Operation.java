@@ -1,13 +1,16 @@
 package Milkdromeda.RobotFunctions.MecanumWheels;
 
-import RobotFunctions.Error;
-import RobotFunctions.Units_time;
-import org.jetbrains.annotations.NotNull;
+import Milkdromeda.RobotFunctions.Error;
+import Milkdromeda.RobotFunctions.Units_time;
+import Milkdromeda.TaskManager.Clock;
+import Milkdromeda.TaskManager.Task;
+import com.sun.istack.internal.NotNull;
 
 import java.util.ArrayList;
 
-public class Operation extends Thread{
-    public Operation() {
+public class Operation extends Task {
+    public Operation(Clock clock) {
+        super(clock);
         this.template = null;
         this.queue = new ArrayList<MecanumWheels>();
         this.template = null;
@@ -19,7 +22,8 @@ public class Operation extends Thread{
         this.endTime = -1;
         this.object = null;
     }
-    public Operation(MecanumWheels template) {
+    public Operation(Clock clock, MecanumWheels template) {
+        super(clock);
         this.template = template;
         this.queue = new ArrayList<MecanumWheels>();
         this.template = null;
@@ -32,6 +36,7 @@ public class Operation extends Thread{
         this.object = null;
     }
     public Operation(@NotNull Operation o) {
+        super(o.clock);
         this.template = o.template;
         this.queue = o.queue;
         this.template = o.template;

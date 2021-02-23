@@ -83,5 +83,23 @@ public abstract class DriveTrain{
 
         return returnArray;
     }
+    public double getLength() {
+        return this.length;
+    }
+    public double getWidth() {
+        return this.width;
+    }
+    public double getWheelRadius() {
+        return this.wheelRadius;
+    }
+    public double getTpr() {
+        return this.tpr;
+    }
+
+    protected double length = -1;
+    protected double width = -1;
+    protected double tpr = -1; //ticks per radian
+    protected double maxSpeed = -1; //radians per second
+    protected double wheelRadius = -1;
 }
 

@@ -5,26 +5,35 @@ import Milkdromeda.RobotFunctions.Units_length;
 import Milkdromeda.RobotFunctions.Units_time;
 import Milkdromeda.Drivers.DriveTrain;
 
+import Milkdromeda.TaskManager.Clock;
+import Milkdromeda.TaskManager.Task;
+import Milkdromeda.TaskManager.ThreadManager;
+import org.ejml.data.DMatrix4;
+import org.ejml.data.DMatrix4x4;
+import org.ejml.dense.fixed.CommonOps_DDF4;
+
 import com.sun.istack.internal.NotNull;
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 public class MecanumWheels {
-    private double getPivotDistance(double pivot) {
-        double a = 2.5;
-        if(pivot == 0)
-            return Double.POSITIVE_INFINITY;
-        return a * 1 / pivot + a * Math.signum(pivot);
+    private void maximizeVector(DMatrix4 vector) {
+        double maxValue = vector.get(1, 1);
+        for(int a = 2; a <= 4; a++) {
+            if(maxValue < vector.get(a, 1))
+                maxValue = vector.get(a, 1);
+        }
+
+        CommonOps_DDF4.scale(1 / maxValue, vector);
     }
 
     MecanumWheels(DriveTrain driveConfig) {
         this.bound = BoundType.NONE;
         this.boundValue = -1;
         this.settings = new MotorSetting();
-        this.isPathUpdated = false;
         this.instanceRunning = false;
         this.driveConfig = driveConfig;
         this.startTime = -1;
         this.endTime = -1;
-        this.isPathUpdated = true;
         this.currentProcedure = null;
 
         this.setError(Error.NO_ERROR);
@@ -33,12 +42,10 @@ public class MecanumWheels {
         this.bound = object.bound;
         this.boundValue = object.boundValue;
         this.settings = new MotorSetting();
-        this.isPathUpdated = false;
         this.driveConfig = object.driveConfig;
         this.instanceRunning = false;
         this.startTime = -1;
         this.endTime = -1;
-        this.isPathUpdated = true;
         this.currentProcedure = null;
 
         this.setError(Error.NO_ERROR);
@@ -47,16 +54,26 @@ public class MecanumWheels {
    public void copyMotorSetting(@NotNull MecanumWheels object) {
         this.setError(Error.NO_ERROR);
         this.settings = new MotorSetting(this.settings);
-        this.isPathUpdated = true;
         this.currentProcedure = object.currentProcedure;
 
         this.setError(Error.NO_ERROR);
    }
 
-    //todo fill in add Trajectory
     public void addTrajectory(Procedure procedure) {
-        double F_0 = Math.sin(procedure.getAngle() + Math.PI / 4);
-        double F_1 = Math.sin(procedure.getAngle() - Math.PI / 4);
+        DMatrix4 inputVector = new DMatrix4(
+                Math.cos(procedure.getAngle()) * procedure.getMagnitude(),
+                Math.sin(procedure.getAngle()) * procedure.getMagnitude(),
+                procedure.getPivot(),
+                0);
+
+        DMatrix4 outputVector = new DMatrix4(0, 0, 0, 0);
+
+        CommonOps_DDF4.mult(this.matrix, inputVector, outputVector);
+        CommonOps_DDF4.scale( 2 /(this.driveConfig.getLength() + this.driveConfig.getWidth()), outputVector);
+        this.maximizeVector(outputVector);
+        CommonOps_DDF4.scale(procedure.getMagnitude(), outputVector);
+
+        this.settings.setMotor(outputVector);
     }
     public void setDistanceBounds(double distance, @NotNull Units_length units) {
         this.bound = BoundType.DISTANCE;
@@ -82,13 +99,61 @@ public class MecanumWheels {
         return this.bound;
     }
 
-    //todo fill in getRunTime
     public double getRunTime(Units_time units) {
+        if(this.bound == BoundType.NONE) {
+            this.setError(Error.MW_NO_BOUND_SET);
+            return -1;
+        } else if (this.bound == BoundType.TIME) {
+            this.setError(Error.NO_ERROR);
+            return this.boundValue / units.getValue();
+        }
+
+        DMatrix4 settings = this.settings.getMotor();
+        DMatrix4 velocity = new DMatrix4(0, 0, 0, 0);
+        DMatrix4 netVelocity = new DMatrix4(0, 0, 0, 0);
+        DMatrix4x4 i_matrix = new DMatrix4x4(
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0
+        );
+        CommonOps_DDF4.invert(this.matrix, i_matrix);
+        CommonOps_DDF4.scale(this.driveConfig.getWheelRadius(), settings);
+        CommonOps_DDF4.mult(i_matrix, settings, velocity);
+        CommonOps_DDF4.mult(this.netVelocity, velocity, netVelocity);
+
+        double velocityMag = Math.sqrt(Math.pow(netVelocity.a1, 2) + Math.pow(netVelocity.a2, 2));
+
         this.setError(Error.NO_ERROR);
+        return this.boundValue / velocityMag / units.getValue();
     }
-    //todo fill in getRunDistance.
     public double getRunDistance(Units_length units) {
+        if(this.bound == BoundType.NONE) {
+            this.setError(Error.MW_NO_BOUND_SET);
+            return -1;
+        } else if (this.bound == BoundType.DISTANCE) {
+            this.setError(Error.NO_ERROR);
+            return this.boundValue / units.getValue();
+        }
+
+        DMatrix4 settings = this.settings.getMotor();
+        DMatrix4 velocity = new DMatrix4(0, 0, 0, 0);
+        DMatrix4 netVelocity = new DMatrix4(0, 0, 0, 0);
+        DMatrix4x4 i_matrix = new DMatrix4x4(
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0
+                );
+        CommonOps_DDF4.invert(this.matrix, i_matrix);
+        CommonOps_DDF4.scale(this.driveConfig.getWheelRadius(), settings);
+        CommonOps_DDF4.mult(i_matrix, settings, velocity);
+        CommonOps_DDF4.mult(this.netVelocity, velocity, netVelocity);
+
+        double velocityMag = Math.sqrt(Math.pow(netVelocity.a1, 2) + Math.pow(netVelocity.a2, 2));
+
         this.setError(Error.NO_ERROR);
+        return velocityMag * this.boundValue / units.getValue();
     }
 
     public Procedure getCurrentProcedure() {
@@ -99,34 +164,43 @@ public class MecanumWheels {
         return currentProcedure;
     }
 
-    public void drive() {
+    public synchronized void drive() {
         if(MecanumWheels.running) {
             this.setError(Error.MW_PROCESS_ALREADY_RUNNING);
             return;
         }
-        if(!this.isPathUpdated)
-            this.addTrajectory(this.currentProcedure);
+
+        switch (this.bound) {
+            case DISTANCE:
+                this.boundTask = new DistanceBound(null, boundValue, this);
+                break;
+            case TIME:
+                this.boundTask = new TimeBound(null, boundValue, this);
+                break;
+            default:
+                this.boundTask = null;
+        }
 
         MecanumWheels.running = true;
         this.instanceRunning = true;
-
         this.startTime = System.currentTimeMillis();
-        this.driveConfig.setMotor(this.settings.getMotor());
+
+        if(this.boundTask != null)
+            this.boundTask.start();
+
+        this.driveConfig.setMotor(this.settings.getMotorArray());
 
         this.setError(Error.NO_ERROR);
     }
-    public void updateDrive() {
+    public synchronized void updateDrive() {
         if(!this.instanceRunning)
             this.setError(Error.MW_NO_PROCESS_RUNNING);
 
-        if(!this.isPathUpdated)
-            this.addTrajectory(this.currentProcedure);
-
-        this.driveConfig.setMotor(this.settings.getMotor());
+        this.driveConfig.setMotor(this.settings.getMotorArray());
 
         this.setError(Error.NO_ERROR);
     }
-    public void stop() {
+    public synchronized void stop() {
         //todo add stop types for more easy transition between different operations
         if(!this.instanceRunning) {
             this.setError(Error.MW_NO_PROCESS_RUNNING);
@@ -137,11 +211,16 @@ public class MecanumWheels {
 
         this.instanceRunning = false;
         MecanumWheels.running = false;
+        this.endTime = System.currentTimeMillis();
 
         this.setError(Error.NO_ERROR);
     }
-    public void hardStop() {
+    public synchronized void hardStop() {
         this.driveConfig.stop();
+
+        if(this.instanceRunning)
+            this.endTime = System.currentTimeMillis();
+
         this.setError(Error.NO_ERROR);
     }
     public double getRuntime(Units_time units) {
@@ -167,24 +246,57 @@ public class MecanumWheels {
 
     private static class MotorSetting {
         private MotorSetting(MotorSetting object) {
-            for(byte a = 0; a < motors.length; a++)
-                this.motors[a] = object.motors[a];
+            this.motors = object.motors;
         }
         private MotorSetting() {}
 
-        private void setMotor(double power, Motor index) {
-            this.motors[index.getValue()] = power;
+        private void setMotor(DMatrix4 motors) {
+            this.motors = motors;
+        }
+        private DMatrix4 getMotor() {
+            return new DMatrix4(motors);
+        }
+        private double[] getMotorArray() {
+            return new double[] {this.motors.a1, this.motors.a2, this.motors.a3, this.motors.a4};
         }
 
-        private double[] getMotor() {
-            double returnArray[] = new double[this.motors.length];
+        private DMatrix4 motors;
 
-            for(int a = 0; a < this.motors.length; a++)
-                returnArray[a] = this.motors[a];
-
-            return returnArray;
+    }
+    private static class TimeBound extends Task {
+        protected TimeBound(Clock clock, double time, MecanumWheels control) {
+            super(clock);
+            this.time = time;
+            this.control = control;
         }
-        private double motors[];
+
+        @Override
+        public void run() {
+            long startTime = System.currentTimeMillis();
+
+            while(!super.isInterrupted() && System.currentTimeMillis() - startTime <= time);
+
+            ThreadManager.stopProcess(super.getProcessId());
+        }
+
+        @Override
+        protected void deconstructor() {
+            this.control.stop();
+        }
+
+        private double time;
+        private MecanumWheels control;
+    }
+    //todo add distance PID for distance bound. Distance bound out of commission for now.
+    private static class DistanceBound extends Task {
+        protected DistanceBound(Clock clock, double distance, MecanumWheels control) {
+            super(clock);
+        }
+
+        @Override
+        public void run() {
+            ThreadManager.stopProcess(super.getProcessId());
+        }
     }
 
     private static boolean running = false;
@@ -196,11 +308,23 @@ public class MecanumWheels {
     private BoundType bound;
     private double boundValue;
     private MecanumWheels.MotorSetting settings;
-    private boolean isPathUpdated;
     private DriveTrain driveConfig;
     private long startTime;
     private long endTime;
     private Procedure currentProcedure;
+    private Task boundTask;
+
+    private final DMatrix4x4 matrix = new DMatrix4x4(
+                 1, 1, -(this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
+                -1, 1, -(this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
+                -1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
+                 1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 1
+            );
+    private final DMatrix4x4 netVelocity = new DMatrix4x4(
+            1, 0, -Math.sqrt(Math.pow(this.driveConfig.getLength(), 2) + Math.pow(this.driveConfig.getWidth(), 2)), 0,
+            0, 1, 0, 0,
+            0, 0, 0, 0,
+            0, 0, 0, 0
+    );
 }
 
-//todo need to add a closed-loop feedback system with wheel encoders.

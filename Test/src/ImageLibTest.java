@@ -2,7 +2,7 @@ import Milkdromeda.Image.Bitmap;
 
 import java.nio.ByteBuffer;
 
-public class Test {
+public class ImageLibTest {
     private static int countPixel(Bitmap image, double lowerBound, double upperBound) {
         image.makeGrayscale();
 

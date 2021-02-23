@@ -23,11 +23,11 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="BmpIO" exported="" />
+    <orderEntry type="module" module-name="BmpIO" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/commons-math3-3.6.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/ejml-v0.40.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -17,16 +17,19 @@ import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 
 public class MecanumWheels {
     private void maximizeVector(DMatrix4 vector) {
-        double maxValue = vector.get(1, 1);
-        for(int a = 2; a <= 4; a++) {
-            if(maxValue < vector.get(a, 1))
-                maxValue = vector.get(a, 1);
+        double maxValue = Math.abs(vector.get(1, 0));
+        for(int a = 1; a < 4; a++) {
+            if(maxValue < Math.abs(vector.get(a, 0)))
+                maxValue = Math.abs(vector.get(a, 0));
         }
+
+        if(maxValue == 0)
+            return;
 
         CommonOps_DDF4.scale(1 / maxValue, vector);
     }
 
-    MecanumWheels(DriveTrain driveConfig) {
+    public MecanumWheels(DriveTrain driveConfig) {
         this.bound = BoundType.NONE;
         this.boundValue = -1;
         this.settings = new MotorSetting();
@@ -35,6 +38,19 @@ public class MecanumWheels {
         this.startTime = -1;
         this.endTime = -1;
         this.currentProcedure = null;
+
+        this.netVelocity = new DMatrix4x4(
+                1, 0, -Math.sqrt(Math.pow(this.driveConfig.getLength(), 2) + Math.pow(this.driveConfig.getWidth(), 2)), 0,
+                0, 1, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0
+        );
+        this.matrix = new DMatrix4x4(
+                1, 1, (this.driveConfig.getLength() + this.driveConfig.getWidth()) / -2, 0,
+                -1, 1, (this.driveConfig.getLength() + this.driveConfig.getWidth()) / -2, 0,
+                -1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
+                1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 1
+        );
 
         this.setError(Error.NO_ERROR);
     }
@@ -46,6 +62,19 @@ public class MecanumWheels {
         this.instanceRunning = false;
         this.startTime = -1;
         this.endTime = -1;
+
+        this.netVelocity = new DMatrix4x4(
+                1, 0, -Math.sqrt(Math.pow(this.driveConfig.getLength(), 2) + Math.pow(this.driveConfig.getWidth(), 2)), 0,
+                0, 1, 0, 0,
+                0, 0, 0, 0,
+                0, 0, 0, 0
+        );
+        this.matrix = new DMatrix4x4(
+                1, 1, -(this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
+                -1, 1, -(this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
+                -1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
+                1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 1
+        );
         this.currentProcedure = null;
 
         this.setError(Error.NO_ERROR);
@@ -59,7 +88,7 @@ public class MecanumWheels {
         this.setError(Error.NO_ERROR);
    }
 
-    public void addTrajectory(Procedure procedure) {
+    public void addTrajectory(@NotNull Procedure procedure) {
         DMatrix4 inputVector = new DMatrix4(
                 Math.cos(procedure.getAngle()) * procedure.getMagnitude(),
                 Math.sin(procedure.getAngle()) * procedure.getMagnitude(),
@@ -314,17 +343,7 @@ public class MecanumWheels {
     private Procedure currentProcedure;
     private Task boundTask;
 
-    private final DMatrix4x4 matrix = new DMatrix4x4(
-                 1, 1, -(this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
-                -1, 1, -(this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
-                -1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 0,
-                 1, 1,  (this.driveConfig.getLength() + this.driveConfig.getWidth()) / 2, 1
-            );
-    private final DMatrix4x4 netVelocity = new DMatrix4x4(
-            1, 0, -Math.sqrt(Math.pow(this.driveConfig.getLength(), 2) + Math.pow(this.driveConfig.getWidth(), 2)), 0,
-            0, 1, 0, 0,
-            0, 0, 0, 0,
-            0, 0, 0, 0
-    );
+    private DMatrix4x4 matrix;
+    private DMatrix4x4 netVelocity;
 }
 
